@@ -454,11 +454,11 @@
 	
 	
 	// Fake Data
-	var malep = 0.43,
-			femalep = 0.57,
+	var r_malep = 0.99,
+			r_femalep = 0.01,
 			children = 0.34;
-	malep = Math.ceil(malep*100);
-	femalep = Math.ceil(femalep*100);
+	malep = Math.ceil(r_malep*100);
+	femalep = Math.ceil(r_femalep*100);
 	children =  Math.ceil(children*100);
 	
 	
@@ -509,11 +509,9 @@
 		  donutWidth: 10,
 		  labelOffset: 20,
 			labelDirection: 'explode',
-		  labelInterpolationFnc: function(value) {
-				return value;
-  		}
+			startAngle : 90 - (r_malep * 180),
 		};
-	
+	console.log( Math.abs(r_malep - r_femalep) * 360);
 	new Chartist.Pie('#gender-chart-1', gender_data, gender_options);
 	new Chartist.Pie('#gender-chart-2', gender_data, gender_options);
   

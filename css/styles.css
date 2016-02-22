@@ -357,6 +357,7 @@ span.badge {
 	font-size:12px;
 	position:relative;
 	border:none;
+	text-align: left;
 }
 
 .browser-tool table tr:nth-child(even) {
@@ -364,10 +365,93 @@ span.badge {
 	border:none;
 }
 
+.browser-tool table td.align-right,
 .browser-tool table thead th:last-child,.browser-tool table td:last-child {
 	text-align:right;
 }
 
+
+.remove-item {
+	position: absolute;
+	right: 10px;
+	top:10px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 20px;
+	font-size: 10px;
+	background: #fe504f;
+	color: #fff;
+	transition: all 0.3s;
+	transform: translateX(50px);
+	cursor: pointer;
+	
+}
+
+.remove-item i.material-icons {
+	line-height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	height: 20px;
+	font-size: 12px;
+	color: #fff;
+}
+
+tr:hover .remove-item {
+	transform: translateX(0);
+}
+
+.on-off input {
+	opacity: 0;
+	position: absolute;
+}
+
+.on-off label {
+	content: ' ';
+	height: 20px;
+	width: 40px;
+	border-radius: 20px;
+	border: 2px solid #ddd;
+	background: #efefef;
+	display: block;
+	vertical-align: middle;
+}
+
+.on-off label:after {
+	content: ' ';
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	border:2px solid #ccc;
+	background: #fff;
+	position: absolute;
+	left: 20px;
+	top:10px;
+	transition: all 0.3s ease;
+}
+
+.on-off input[type=checkbox]:checked + label:after {
+	content: ' ';
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	background: #1384ac;
+	border-color: #1384ac;
+	position: absolute;
+	left: 40px;
+	top:10px;
+}
+
+tr.is-disabled td .material-icons{
+	color: #ccc;
+}
+tr.is-disabled td {
+	color: #999;
+}
+tr.is-disabled td .color-circle {
+	border-color: #ccc;
+}
 
 /* Buttons ===========================================*/
 
@@ -527,11 +611,11 @@ tr:nth-child(-n+4) .tooltip::after {
 
 /* Profile Section ===========================================*/
 
-.profile-section img {
+.sub-tab-section img {
 	max-width:100%;
 }
 
-.frame .profile-section .content {
+.frame .sub-tab-section .content {
 	position:absolute;
 	height:calc(350px - 45px);
 	top:40px;
@@ -543,7 +627,7 @@ tr:nth-child(-n+4) .tooltip::after {
 	text-align:center;
 }
 
-.profile-section .inner-content {
+.sub-tab-section .inner-content {
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -679,6 +763,7 @@ tr:nth-child(-n+4) .tooltip::after {
 }
 
 /* Sub =============================================*/
+.filter-bar,
 .sub-tab-bar {
 	display:flex;
 	color:#999;
@@ -688,7 +773,27 @@ tr:nth-child(-n+4) .tooltip::after {
 	margin:0;
 	box-shadow:0 3px 8px rgba(0,0,0,0.035);
 }
+.filter-bar {
+	display: table;
+	padding: 0;
+}
 
+.browser-tool table.filter-bar td {
+	padding: 5px;
+	text-align: left;
+	cursor: pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none; 
+  white-space: nowrap;
+}
+
+.browser-tool table.filter-bar td:first-child {
+	padding-left:20px
+}
 .sub-tab-bar li {
 	display:flex;
 	position:relative;
@@ -846,4 +951,84 @@ tr:nth-child(-n+4) .tooltip::after {
 
 .income-chart .ct-vertical.ct-label {
 	font-size:10px;
+}
+
+
+/* History =============================================*/
+#history-chart .good-history{
+	fill: #82bb23;
+}
+
+#history-chart .neutral-history{
+	fill: #1384ac;
+}
+
+#history-chart .bad-history{
+	fill: #fe504f;
+}
+
+#history-chart .ct-label {
+	fill: #fff;
+}
+
+.color-square {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin-right: 3px;
+	border:2px solid #ccc;
+}
+
+.color-circle {
+	width: 7px;
+	height: 7px;
+	display: inline-block;
+	margin-right: 5px;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+
+
+.good .color-circle,
+.green-square  {
+	border-color: #82bb23;
+}
+
+.neutral .color-circle,
+.neutral-square {
+	border-color:  #ccc;
+}
+
+.bad .color-circle,
+.red-square {
+	border-color:  #fe504f;
+}
+
+.is-active > .green-square,
+.green-square.is-active  {
+	background: #82bb23;
+}
+.is-active > .neutral-square,
+.neutral-square.is-active  {
+	background: #ccc;
+}
+
+
+.is-active > .red-square,
+.red-square.is-active {
+	background: #fe504f;
+}
+
+
+.good .material-icons {
+	color: #82bb23;
+}
+
+.bad .material-icons {
+	color: #fe504f;
+}
+
+.neutral .material-icons {
+	color: #ccc;
 }

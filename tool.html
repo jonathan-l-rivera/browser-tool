@@ -32,7 +32,7 @@
 			
 			<!-- Current Profile Sub Tab ================================-->
 			<div class="frame current-frame" id="current-profile">
-				<div class="profile-section">
+				<div class="sub-tab-section">
 					<ul class="sub-tab-bar">
 						<li class="js-go-to-frame is-active" data-target=".gender">Gender</li>
 						<li class="js-go-to-frame" data-target=".age">Age</li>
@@ -163,7 +163,7 @@
 			<!-- Long Term Profile Sub Tab ================================-->
 			
 			<div class="frame off-right" id="long-term-profile">
-				<div class="profile-section">
+				<div class="sub-tab-section">
 					<ul class="sub-tab-bar">
 						<li class="js-go-to-frame is-active" data-target=".gender2">Gender</li>
 						<li class="js-go-to-frame" data-target=".age2">Age</li>
@@ -310,29 +310,73 @@
 			</ul>
 			
 			<!-- Website Cookies ================================-->
-			<div class="frame current-frame" id="website-cookies">
-				<div class="inner-content">
+			<div class="frame sub-tab-section current-frame" id="website-cookies">
+				<table class="filter-bar" id="filter-history">
+					<tr>
+						<td>Filter: </td>
+						<td class="filter-item" data-filter=".good" data-target="#site-cookies">
+							<span class="color-square green-square"></span>Good: 342<span class="percentage"></span>
+						</td>
+						<td class="filter-item" data-filter=".neutral" data-target="#site-cookies">
+							<span class="color-square neutral-square"></span>Neutral: 1234 <span class="percentage"></span></td>
+						<td class="filter-item" data-filter=".bad" data-target="#site-cookies">
+							<span class="color-square red-square"></span>Bad:214 <span class="percentage"></span></td>
+					</tr>
+				</table>
+					
+					<!-- Gender ================================-->
+				<div class="content frame history">
 					<table >	
 			        	<tbody id="site-cookies">
-							<tr>
-								<td>amazon.com</td>
-								<td>1/1/16</td>
+							<tr class="good">
+								<td><span class="color-circle"></span>amazon.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
 							</tr>
-							<tr>
-								<td>google.com</td>
-								<td>1/1/16</td>
+							<tr class="good">
+								<td><span class="color-circle"></span>google.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
 							</tr>
-							<tr>
-								<td>NSA.com</td>
-								<td>1/1/16</td>
+							<tr class="neutral">
+								<td><span class="color-circle"></span>NSA.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
 							</tr> 
-							<tr>
-								<td>amazon.com</td>
-								<td>1/1/16</td>
+							<tr class="good">
+								<td><span class="color-circle"></span>amazon.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
 							</tr>
-							<tr>
-								<td>google.com</td>
-								<td>1/1/16</td>
+							<tr class="neutral">
+								<td><span class="color-circle"></span>google.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+							</tr>
+							<tr class="neutral">
+								<td><span class="color-circle"></span>amazon.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+							</tr>
+							<tr class="neutral">
+								<td><span class="color-circle"></span>google.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+							</tr>
+							<tr class="bad">
+								<td><span class="color-circle"></span>NSA.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+							</tr> 
+							<tr class="neutral">
+								<td><span class="color-circle"></span>amazon.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+							</tr>
+							<tr class="neutral">
+								<td><span class="color-circle"></span>google.com</td>
+								<td class="align-right">1/1/16</td>
+								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
 							</tr>
 				    	</tbody>
 					</table>
@@ -345,29 +389,100 @@
 			</div>
 			
 			<!-- Third Party Cookies ================================-->
-			<div class="frame-2 frame off-right" id="thirdparty-cookies">	      
+			<div class="frame-2 frame off-right" id="thirdparty-cookies">     
 		      <div class="inner-content">
 			      <table >
 			        <tbody id="third-cookies">
-			          <tr>
-			            <td>amazon.com</td>
+			          <tr class="good">
+			            <td><span class="color-circle"></span>amazon.com</td>
 			            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-1">
+				            <label for="item-1">
+				            </label>
+			            </td>
 			          </tr>
-			          <tr>
-			           	<td><a class="micro-btn danger-1 modal-trigger" href="#modal1"><i class="material-icons">warning</i> google.com</a></td>
+			          <tr class="good">
+			           	<td><span class="color-circle"></span>google.com</td>
 			            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-2">
+				            <label for="item-2">
+				            </label>
+			            </td>
 			          </tr>
-			          <tr>
-			           	<td>NSA.com</td>
-			            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>NSA.com</td>
+			            <td class="cookie-type">Phishing <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-3">
+				            <label for="item-3">
+				            </label>
+			            </td>
 			          </tr>
-			          <tr>
-			            <td>amazon.com</td>
+			          <tr class="good">
+			            <td><span class="color-circle"></span>amazon.com</td>
 			            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-4">
+				            <label for="item-4">
+				            </label>
+			            </td>
 			          </tr>
-			          <tr>
-			           	<td><a class="micro-btn danger-1 modal-trigger" href="#modal1"><i class="material-icons">warning</i> google.com</a></td>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>google.com</td>
+			            <td class="cookie-type">Malware <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-5">
+				            <label for="item-5">
+				            </label>
+			            </td>
+			          </tr>
+			          
+			          <tr class="good">
+			            <td><span class="color-circle"></span>amazon.com</td>
 			            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-6">
+				            <label for="item-6">
+				            </label>
+			            </td>
+			          </tr>
+			          <tr class="good">
+			           	<td><span class="color-circle"></span>google.com</td>
+			            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-7">
+				            <label for="item-7">
+				            </label>
+			            </td>
+			          </tr>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>NSA.com</td>
+			            <td class="cookie-type">Phishing <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-8">
+				            <label for="item-8">
+				            </label>
+			            </td>
+			          </tr>
+			          <tr class="good">
+			            <td><span class="color-circle"></span>amazon.com</td>
+			            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-9">
+				            <label for="item-9">
+				            </label>
+			            </td>
+			          </tr>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>google.com</td>
+			            <td class="cookie-type">Malware <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+			            <td class="on-off">
+				            <input type="checkbox" id="item-10">
+				            <label for="item-10">
+				            </label>
+			            </td>
 			          </tr>
 			        </tbody>
 			      </table>
@@ -395,7 +510,7 @@
 <script src="js/chartist.min.js"></script>
 
 <script>
-	
+	var filters;
 	// Open Browser Tool	
 	$('.browser-tool-title-bar').click(function(){
 		var parent = $(this).parents('.browser-tool');
@@ -445,21 +560,49 @@
 		}
 		return false;
 	});
-
+	
+	$('.filter-bar .filter-item').click(filterItmes);
+	
+	function filterItmes(event){
+		$(this).toggleClass('is-active');
+		var target = $(this).attr('data-target');
+		if($('.filter-bar .filter-item.is-active').length > 0) {
+			$(target + ' tr').hide();
+		}else {
+			$(target + ' tr').slideDown('fast');
+		}
+		$('.filter-bar .filter-item').each(function(){
+			if($(this).hasClass('is-active')) {
+				var filter_target = $(this).attr('data-target');
+				var filter_class = $(this).attr('data-filter');
+				$(filter_target + ' ' + filter_class).slideDown('fast');
+			}
+		});
+	}
 	
 	$('.load-more').click(function(){
 		// Get Data
 		// Append Data $([DATA]).appendTo($(this).attr('data-append'));
 	});
 	
+	$('.on-off label').click(function(){
+		$(this).parents('tr').toggleClass('is-disabled');
+	});
 	
 	// Fake Data
 	var r_malep = 0.99,
 			r_femalep = 0.01,
-			children = 0.34;
+			children = 0.34,
+			good = 337,
+			bad = 123,
+			neutral = 1233,
+			total_history = good + bad + neutral;
 	malep = Math.ceil(r_malep*100);
 	femalep = Math.ceil(r_femalep*100);
 	children =  Math.ceil(children*100);
+	good_p = Math.ceil(good/total_history*100);
+	bad_p = Math.ceil(bad/total_history*100);
+	neutral_p = Math.ceil(neutral/total_history*100);
 	
 	
 	// Options for Education Chart
@@ -592,8 +735,7 @@
 	
 	new Chartist.Line('#income-chart-1', income_data, income_options);
 	new Chartist.Line('#income-chart-2', income_data, income_options);
-	
-	
+  
 </script>
 </body>
 

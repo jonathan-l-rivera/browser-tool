@@ -326,72 +326,164 @@
 					
 					<!-- Gender ================================-->
 				<div class="content frame history">
-					<table >	
+					<table class="sortable">
+						<thead>
+							<tr>
+								<th>Site</th>
+								<th style="text-align:center;">Date Visited</th>
+								<th style="text-align:center;">Time Spent</th>
+								<th style="text-align:center;">
+									<select id="action-select">
+										<option>Action</option>
+										<option value="select-all">Select All</option>
+										<option value="select-none">Select None</option>
+										<option value="delete">Delete</option>
+									</select>
+								</th>
+							</tr>
+						</thead>
 			        	<tbody id="site-cookies">
 							<tr class="good">
 								<td><span class="color-circle"></span>amazon.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 							<tr class="good">
 								<td><span class="color-circle"></span>google.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>NSA.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr> 
 							<tr class="good">
 								<td><span class="color-circle"></span>amazon.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>google.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>amazon.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>google.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 							<tr class="bad">
 								<td><span class="color-circle"></span>NSA.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr> 
 							<tr class="neutral">
 								<td><span class="color-circle"></span>amazon.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>google.com</td>
 								<td class="align-right">1/1/16</td>
-								<td><a class="remove-item"><i class="material-icons">close</i></a></td>
+								<td class="align-right">2:30:34</td>
+								<td>
+									<label class="remove-label">
+										<input type="checkbox">
+										<a class="remove-item"><i class="material-icons">close</i></a>
+									</label>
+								</td>
 							</tr>
 				    	</tbody>
 					</table>
-					
-					<!-- More Button ================================-->
-					<div class="more-btn-container">
-					  <a class="micro-btn load-more" href="#" data-append="#site-cookies">See More <i class="material-icons">keyboard_arrow_down</i></a>
-					</div>
 				</div>
 			</div>
 			
 			<!-- Third Party Cookies ================================-->
-			<div class="frame-2 frame off-right" id="thirdparty-cookies">     
-		      <div class="inner-content">
-			      <table >
+			<div class="frame-2 frame sub-tab-section off-right" id="thirdparty-cookies">  
+				<table class="filter-bar" id="filter-cookies">
+					<tr>
+						<td>Filter: </td>
+						<td class="filter-item" data-filter=".good" data-target="#third-cookies">
+							<span class="color-square green-square"></span>Good: 342<span class="percentage"></span>
+						</td>
+						<td class="filter-item" data-filter=".neutral" data-target="#third-cookies">
+							<span class="color-square neutral-square"></span>Neutral: 1234 <span class="percentage"></span></td>
+						<td class="filter-item" data-filter=".bad" data-target="#third-cookies">
+							<span class="color-square red-square"></span>Bad:214 <span class="percentage"></span></td>
+					</tr>
+				</table>
+					
+					<!-- Gender ================================-->
+				<div class="content frame history"> 
+			      <table class="sortable">
+				      <thead>
+							<tr>
+								<th>Site</th>
+								<th style="text-align:center;">Date Visited</th>
+								<th style="text-align:center;">Type</th>
+								<th style="text-align:center;">Block</th>
+							</tr>
+						</thead>
 			        <tbody id="third-cookies">
 			          <tr class="good">
 			            <td><span class="color-circle"></span>amazon.com</td>
@@ -399,6 +491,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-1">
 				            <label for="item-1">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -408,6 +501,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-2">
 				            <label for="item-2">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -417,6 +511,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-3">
 				            <label for="item-3">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -426,6 +521,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-4">
 				            <label for="item-4">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -435,6 +531,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-5">
 				            <label for="item-5">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -445,6 +542,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-6">
 				            <label for="item-6">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -454,6 +552,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-7">
 				            <label for="item-7">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -463,6 +562,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-8">
 				            <label for="item-8">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -472,6 +572,7 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-9">
 				            <label for="item-9">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
@@ -481,16 +582,12 @@
 			            <td class="on-off">
 				            <input type="checkbox" id="item-10">
 				            <label for="item-10">
+				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
 			        </tbody>
 			      </table>
-			      
-			      <!-- More Button ================================-->
-			      <div class="more-btn-container">
-				      <a class="micro-btn load-more" href="#grab-bag-2" data-append="#third-cookies">See More <i class="material-icons">keyboard_arrow_down</i></a>
-			      </div>
 				</div>
 			</div>
 		</div>
@@ -504,7 +601,10 @@
 	</div>
 </div>
 
+
+<script src="js/sorttable.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/chartist.min.js"></script>
@@ -587,6 +687,24 @@
 	
 	$('.on-off label').click(function(){
 		$(this).parents('tr').toggleClass('is-disabled');
+	});
+	
+	$('#action-select').change(function(event){
+		var val = $(this).val();
+		
+		console.log(val);
+		if(val == 'select-all') {
+			$('.remove-label input').prop('checked', true);
+		}
+		if(val == 'select-none') {
+			$('.remove-label input').prop('checked', false);
+		}
+		if(val == 'delete') {
+			$('.remove-label input:checked').each(function(){
+				$(this).parents('tr').remove();
+			});
+		}
+		$(this).find('option').prop('selected', false);
 	});
 	
 	// Fake Data

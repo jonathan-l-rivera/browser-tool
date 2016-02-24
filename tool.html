@@ -607,7 +607,7 @@
 	function filterItmes(event){
 		$(this).toggleClass('is-active');
 		var target = $(this).attr('data-target');
-		if($('.filter-bar .filter-item.is-active').length > 0) {
+		if($(this).parent().find('.filter-item.is-active').length > 0) {
 			$(target + ' tr').hide();
 		}else {
 			$(target + ' tr').show();

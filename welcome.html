@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script type="text/javascript" src="js/chartist.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+
+<body>
+	<div class="banner">
+		 <div class="header">
+    <div class="header-inner container clear">
+      <a class="logo" href="#"><span class="sr">YourBrowserInsights</span></a>
+    </div>
+  </div>
+  <div class="container" id="load-1">
+    <div class="banner-inner">
+      <h1 class="banner-lead">
+        <span class="banner-lead-1">Thank You for downloading</span>
+        <span class="banner-lead-2"> Our extension.</span>
+      </h1>
+      <div class="banner-content">
+        <p>
+        	Currently we are collecting information required to build your profile. Please bare with us!
+        </p>
+      </div>
+      <div class="banner-buttons">
+      	<div class="percentage">
+	      	<div class="percent-bar" id="loader" style="width:50%;"></div>
+      	</div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="load-2" style="display: none;">
+    <div class="banner-inner">
+      <h1 class="banner-lead">
+        <span class="banner-lead-1">Your Profile is Now Ready!</span>
+      </h1>
+      <div class="banner-content">
+        <p>
+        Please use our button in the navigation panel to see your results.
+        </p>
+      </div>
+      <div class="banner-buttons">
+      	<img src="img/browser-bar.gif" style="max-width: 900px;">
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="browser-tool-wrap" id="draggable">
+	<div class="browser-tool" style="display: none;" id="bt-bottom">
+		<div class="browser-tool-title-bar"><h4 class="browser-tool-title">See Your Profile</h4><div class="icon-nav"><i class="material-icons">keyboard_arrow_up</i></div></div>
+		<div class="browser-tool-content" style="display: none;">
+			<ul class="tab-bar" style="display: none;">
+				<li class="is-active js-go-to-frame" data-target="#long-term-profile">Long Term Profile
+				</li>
+				<li class="js-go-to-frame" data-target="#short-term-profile">Current Profile</li>
+			</ul>
+			<div class="current-frame frame" id="long-term-profile">
+				<div class="profile-section">
+					<ul class="sub-tab-bar">
+						<li class="js-go-to-frame is-active" data-target=".gender">Gender</li>
+						<li class="js-go-to-frame" data-target=".age">Age</li>
+						<li class="js-go-to-frame" data-target=".children">Children</li>
+						<li class="js-go-to-frame" data-target=".education">Education</li>
+						<li class="js-go-to-frame" data-target=".income">Income</li>
+						<li class="js-go-to-frame" data-target=".interests">Interests</li>
+					</ul>
+					<div class="content gender frame">
+						<img src="img/gender.png">
+					</div>
+					<div class="content age off-right frame">
+						<img src="img/age.png" width="200px">
+					</div>
+					<div class="content children off-right frame">
+						<img src="img/children.png" width="300px">
+					</div>
+					<div class="content education off-right frame">
+							<table >
+					    <tbody>
+					      <tr>
+					        <td>Bachelors</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:23.7%"></div></div></td>
+					        <td>23.7%</td>
+								</tr>
+								<tr>
+					        <td>High School</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:3.52%"></div></div></td>
+					        <td>3.52%</td>
+								</tr>
+								<tr>
+					        <td>Some College</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:3.04%"></div></div></td>
+					        <td>3.04%</td>
+								</tr>
+								<tr>
+					        <td>Masters</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:2.77%"></div></div></td>
+					        <td>2.77%</td>
+								</tr>
+								<tr>
+					        <td>PHD</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:1.73%"></div></div></td>
+					        <td>1.73%</td>
+								</tr>
+					    </tbody>
+						</table>
+					</div>
+					<div class="content income off-right frame">
+						<img src="img/income.png" width="200px">
+					</div>
+					<div class="content interests off-right frame">
+						<table >
+					    <tbody>
+					      <tr>
+					        <td>Liesure & Hobbies</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:23.7%"></div></div></td>
+					        <td>23.7%</td>
+								</tr>
+								<tr>
+					        <td>Food & Drink</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:3.52%"></div></div></td>
+					        <td>3.52%</td>
+								</tr>
+								<tr>
+					        <td>Beauty & Fitness</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:3.04%"></div></div></td>
+					        <td>3.04%</td>
+								</tr>
+								<tr>
+					        <td>Home & Garden</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:2.77%"></div></div></td>
+					        <td>2.77%</td>
+								<tr>
+					        <td>Science</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:2.73%"></div></div></td>
+					        <td>2.73%</td>
+								</tr>
+								<tr>
+					        <td>Travel</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:2.52%"></div></div></td>
+					        <td>2.52%</td>
+								</tr>
+								<tr>
+					        <td>News</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:2.41%"></div></div></td>
+					        <td>2.41%</td>
+								</tr>
+								<tr>
+					        <td>Education & Employement</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:2.38%"></div></div></td>
+					        <td>2.38%</td>
+								<tr>
+					        <td>Arts & Entertainment</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:2.19%"></div></div></td>
+					        <td>2.19%</td>
+								</tr>
+								<tr>
+					        <td>Computers & Technology</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:1.66%"></div></div></td>
+					        <td>1.66%</td>
+								</tr>
+								<tr>
+					        <td>Business & Industry</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:1.51%"></div></div></td>
+					        <td>1.51%</td>
+								</tr>
+								<tr>
+					        <td>Sports</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:1.37%"></div></div></td>
+					        <td>1.37%</td>
+								</tr>
+								<tr>
+					        <td>Shopping</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:1.31%"></div></div></td>
+					        <td>1.31%</td>
+								</tr>
+								<tr>
+					        <td>Automotive & Vehicle</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:1.31%"></div></div></td>
+					        <td>1.31%</td>
+								</tr>
+								<tr>
+					        <td>Video Games</td>
+					        <td><div class="percent-bar"><div class="percentage" style="width:1.24%"></div></div></td>
+					        <td>1.24%</td>
+					      </tr>
+					    </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<div class="frame off-right" id="short-term-profile">
+				<div class="profile-section">
+					<ul class="sub-tab-bar">
+						<li class="js-go-to-frame is-active" data-target=".gender">Gender</li>
+						<li class="js-go-to-frame" data-target=".age-2">Age</li>
+						<li class="js-go-to-frame" data-target=".interests-2">Children</li>
+						<li class="js-go-to-frame" data-target=".interests-2">Income</li>
+						<li class="js-go-to-frame" data-target=".interests-2">Interests</li>
+					</ul>
+					<div class="content gender-2 frame">
+						<img src="img/gender.png">
+					</div>
+					<div class="content age-2 off-right frame">
+						<img src="img/age.png" width="200px">
+					</div>
+					<div class="content interests-2 off-right frame">
+						<img src="img/interests.png">
+					</div>
+				</div>
+			</div>
+		<div class="frame-1 current-frame" id="frame-1">
+			<table >
+	        <thead>
+	          <tr>
+	              <th data-field="name" colspan="2">Web Site Cookies <span class="tooltip description">Used for the basic performance of the web site. This also confirms you were there</span></th>
+	              <th data-field="date" ><a class="micro-btn js-go-to-frame" href="#frame-2">More <i class="material-icons">keyboard_arrow_right</i></a></th>
+	          </tr>
+	        </thead>
+	
+	        <tbody>
+	          <tr>
+	            <td>amazon.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>google.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	        </tbody>
+	      </table>
+	      
+	      <table >
+	        <thead>
+	          <tr>
+	              <th data-field="name" colspan="2">Third Party Cookies <span class="tooltip description">Used for purposes other than the performance of the web site and involves potential exposure of your data to third parties other than you and the web site operator</span></th>
+	              <th data-field="date"><a class="micro-btn js-go-to-frame" href="#frame-3">More <i class="material-icons">keyboard_arrow_right</i></a></th>
+	          </tr>
+	        </thead>
+	
+	        <tbody>
+	          <tr>
+	            <td>amazon.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td><a class="micro-btn danger-1 modal-trigger" href="#modal1"><i class="material-icons">warning</i> google.com</a></td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	        </tbody>
+	      </table>
+		</div>
+		<div class="frame-2 off-right" id="frame-2">
+			<table >
+	        <thead>
+	          <tr>
+	              <th data-field="date" colspan="3" style="text-align: left;"><a class="micro-btn js-go-to-frame" data-back href=""><i class="material-icons">keyboard_arrow_left</i> Back</a> Existing Web Site Cookies</th>
+	          </tr>
+	        </thead>
+	
+	        <tbody>
+	          <tr>
+	            <td>amazon.com</td>
+	            <td class="cookie-type">Analytics <i class="material-icons">info</i>
+		            <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+		        <td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>google.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	           <tr>
+	            <td>amazon.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>google.com</td>
+	            <td class="cookie-type">Analytics <i class="material-icons">info</i>
+		            <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+		        <td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	           <tr>
+	            <td>amazon.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td><a class="micro-btn danger-1 modal-trigger" href="#modal1"><i class="material-icons">warning</i> google.com</span></td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	           <tr>
+	            <td>amazon.com</td>
+	            <td class="cookie-type">Analytics <i class="material-icons">info</i>
+		            <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+		        <td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>google.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	           <tr>
+	            <td>amazon.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td><a class="micro-btn danger-4 modal-trigger" href="#modal1"><i class="material-icons">warning</i> google.com</a></td>
+	            <td class="cookie-type">Analytics <i class="material-icons">info</i>
+		            <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+		        <td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td>
+	            <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	          </tr>
+	        </tbody>
+	    </table>
+		</div>
+	</div>
+</div>
+-->
+
+<div class="frame-3 off-right" id="frame-3" style="display: none;">
+			<table >
+	        <thead>
+	          <tr>
+	              <th data-field="date" colspan="3" style="text-align: left;"><a class="micro-btn js-go-to-frame" data-back href=""><i class="material-icons">keyboard_arrow_left</i> Back</a> Tracking Cookies</th>
+	          </tr>
+	        </thead>
+	
+	        <tbody id="grab-bag-1">
+	          <tr>
+	            <td>amazon.com</td>
+	            <td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>amazon.com</td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>amazon.com</td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td><a class="micro-btn safe modal-trigger" href="#modal1"><i class="material-icons">check</i> google.com</a> </td>
+	           	<td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>amazon.com</td><td>1/1/16</td>
+	          </tr>
+	           <tr>
+	            <td>amazon.com</td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td><a class="micro-btn danger-4 modal-trigger" href="#modal1"><i class="material-icons">warning</i> NSA.com</a> </td>
+	           	<td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td><td>1/1/16</td>
+	          </tr>
+	           <tr>
+	            <td><a class="micro-btn danger-4 modal-trigger" href="#modal1"><i class="material-icons">warning</i> NSA.com</a> </td>
+	            <td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td><a class="micro-btn danger-4 modal-trigger" href="#modal1"><i class="material-icons">warning</i> NSA.com</a> </td>
+	            <td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>NSA.com</td><td>1/1/16</td>
+	          </tr>
+	           <tr>
+	            <td><a class="micro-btn danger-4 modal-trigger" href="#modal1"><i class="material-icons">warning</i> NSA.com</a> </td><td>1/1/16</td>
+	          </tr>
+	          <tr>
+	           	<td>google.com</td><td>1/1/16</td>
+	          </tr>
+	        </tbody>
+	    </table>
+		</div>
+<div class="frame-2 off-right" id="frame-2" style="display: none">
+	<table >
+	    <thead>
+	      <tr>
+	          <th data-field="date" colspan="3" style="text-align: left;"><a class="micro-btn js-go-to-frame" data-back href=""><i class="material-icons">keyboard_arrow_left</i> Back</a> Existing Web Site Cookies</th>
+	      </tr>
+	    </thead>
+	
+	    <tbody id="grab-bag-2">
+	      <tr>
+	        <td>amazon.com</td>
+	        <td class="cookie-type">Analytics <i class="material-icons">info</i>
+	          <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+	      <td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>google.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>NSA.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	       <tr>
+	        <td>amazon.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>google.com</td>
+	        <td class="cookie-type">Analytics <i class="material-icons">info</i>
+	          <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+	      <td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>NSA.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	       <tr>
+	        <td>amazon.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td><a class="micro-btn danger-1 modal-trigger" href="#modal1"><i class="material-icons">warning</i> google.com</span></td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>NSA.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	       <tr>
+	        <td>amazon.com</td>
+	        <td class="cookie-type">Analytics <i class="material-icons">info</i>
+	          <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+	      <td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>google.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>NSA.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	       <tr>
+	        <td>amazon.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td><a class="micro-btn danger-4 modal-trigger" href="#modal1"><i class="material-icons">warning</i> google.com</a></td>
+	        <td class="cookie-type">Analytics <i class="material-icons">info</i>
+	          <span class="tooltip description">Used to calculate the performance of the web site</span></td>
+	      <td>1/1/16</td>
+	      </tr>
+	      <tr>
+	       	<td>NSA.com</td>
+	        <td class="cookie-type">Ads <i class="material-icons">info</i><span class="tooltip description">Used to present advertisements based on your previous browsing behavior</span></td><td>1/1/16</td>
+	      </tr>
+	    </tbody>
+	</table>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Beware of Big Brother!</h4>
+      <p>They are not only watching you, but they are watching the watchers who are watching you. Now watch those watchers, as well as the watchers who are watching the watchers. Now watch how fast you can close the blinds on these cyber peeping toms.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Learn More</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/vendor/wow.js"></script>
+<script src="js/default.js"></script>
+
+<script>
+	var backframe;
+	var percent = 0;
+
+	function loader(){
+		window.setTimeout(function(){
+		if(percent < 100) {
+			percent ++;
+			$('#loader').css('width', percent + '%');
+			loader();
+		}
+		else {
+			loaded();
+		}
+		
+		}, 100);
+	}
+	
+	function loaded() {
+		$('#load-1').hide();
+		$('#load-2').show();
+		
+	}
+	
+	loader();
+</script>
+</body>
+
+</html>

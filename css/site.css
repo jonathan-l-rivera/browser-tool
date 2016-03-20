@@ -1687,8 +1687,8 @@ img {
 }
 .logo {
   width: 350px;
-  height: 40px;
-  background: url(../img/logo.svg) 50% 50% no-repeat;
+  height: 100px;
+  background: url(../img/logo.svg) left center no-repeat;
   display: inline-block;
   float: left;
   -webkit-transition: all 0.3s;
@@ -2411,7 +2411,7 @@ img {
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#00000000);
   }
   .banner-inner {
-    padding-top: 70px;
+    padding-top: 20px;
   }
   .banner-lead {
     font-size: 48px;
@@ -2553,7 +2553,7 @@ img {
 }
 @media only screen and (min-width: 980px) {
   .header {
-    padding-top: 70px;
+    padding-top: 40px;
   }
   .header-inner {
     padding-left: 15px;
@@ -3000,4 +3000,38 @@ img {
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
+}
+
+
+
+
+.percentage {
+	position: relative;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+  color: #fff;
+  padding: 1em 2.8em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 400;
+  display: inline-block;
+  position: relative;
+  border-radius: 40px;
+  width: 100%;
+  border: 3px solid #fff;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.percent-bar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+  background: #fe504f;
 }

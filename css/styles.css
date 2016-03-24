@@ -41,37 +41,17 @@ ul li {
 }
 
 
-/* ===============================================
+/* =================================================
 	
 	Typography
 
-==================================================*/
-@font-face {
-	font-family:"Roboto";
-	src:local(Roboto Thin),url(../font/roboto/Roboto-Thin.eot);
-	src:url(../font/roboto/Roboto-Thin.eot?#iefix) format("embedded-opentype"),url(../font/roboto/Roboto-Thin.woff2) format("woff2"),url(../font/roboto/Roboto-Thin.woff) format("woff"),url(../font/roboto/Roboto-Thin.ttf) format("truetype");
-	font-weight:200;
-}
-
-@font-face {
-	font-family:"Roboto";
-	src:local(Roboto Light),url(../font/roboto/Roboto-Light.eot);
-	src:url(../font/roboto/Roboto-Light.eot?#iefix) format("embedded-opentype"),url(../font/roboto/Roboto-Light.woff2) format("woff2"),url(../font/roboto/Roboto-Light.woff) format("woff"),url(../font/roboto/Roboto-Light.ttf) format("truetype");
-	font-weight:300;
-}
+================================================== */
 
 @font-face {
 	font-family:"Roboto";
 	src:local(Roboto Regular),url(../font/roboto/Roboto-Regular.eot);
 	src:url(../font/roboto/Roboto-Regular.eot?#iefix) format("embedded-opentype"),url(../font/roboto/Roboto-Regular.woff2) format("woff2"),url(../font/roboto/Roboto-Regular.woff) format("woff"),url(../font/roboto/Roboto-Regular.ttf) format("truetype");
 	font-weight:400;
-}
-
-@font-face {
-	font-family:"Roboto";
-	src:url(../font/roboto/Roboto-Medium.eot);
-	src:url(../font/roboto/Roboto-Medium.eot?#iefix) format("embedded-opentype"),url(../font/roboto/Roboto-Medium.woff2) format("woff2"),url(../font/roboto/Roboto-Medium.woff) format("woff"),url(../font/roboto/Roboto-Medium.ttf) format("truetype");
-	font-weight:500;
 }
 
 @font-face {
@@ -198,7 +178,6 @@ small {
 	height:40px;
 	background:#e0e0e2;
 	border-bottom:none;
-	border-radius: 5px;
 }
 
 .browser-tool .icon-nav {
@@ -208,11 +187,11 @@ small {
 	text-align:center;
 	line-height:40px;
 	-webkit-user-select:none;
-/* Chrome all / Safari all */
+	/* Chrome all / Safari all */
 	-moz-user-select:none;
-/* Firefox all */
+	/* Firefox all */
 	-ms-user-select:none;
-/* IE 10+ */
+	/* IE 10+ */
 	user-select:none;
 	cursor:pointer;
 }
@@ -259,7 +238,6 @@ span.badge {
 	box-shadow:0 30px 60px rgba(0,0,0,0.55);
 	transform:translateY(40px);
 	background:#fff;
-	border-radius:10px;
 }
 
 .browser-tool-title-bar {
@@ -944,10 +922,10 @@ tr:nth-child(-n+4) .tooltip::after {
 	left:50%;
 	bottom:0;
 	bottom:0;
-	border-radius:10px 10px 0 0;
 	transform:translateX(-50%) translateY(100%);
 	background:#fe504f;
 	transition:transform .3s ease;
+	border-radius: 10px 10px 0 0;
 }
 
 .sub-tab-bar li.is-active:after {
@@ -1192,6 +1170,33 @@ tr:nth-child(-n+4) .tooltip::after {
 	width: auto;
 }
 
+.btn {
+	background: #1384ac;
+	color: #fff;
+	font-size: 12px;
+	line-height: 25px;
+	padding: 0 10px;
+	border-radius: 5px;
+	margin-left: 20px;
+	border: none;
+}
+
+#settings-panel textarea {
+	margin: 10px 20px;
+	padding: 5px;
+	background: #efefef;
+	width: calc(100% - 40px);
+	height: 45px;
+	display: block;
+	border-radius: 5px;
+	border:none;
+}
+
+#settings-panel p{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 /* Guide =============================================*/
 
 .guide {
@@ -1208,6 +1213,13 @@ tr:nth-child(-n+4) .tooltip::after {
 	color: #fff;
 	text-align: center;
 	padding: 50px;
+}
+
+.guide-nav {
+	position: absolute;
+	text-align: center;
+	bottom: 30%;
+	width: calc(100% - 100px);
 }
 
 .guide-btn {
@@ -1241,27 +1253,62 @@ tr:nth-child(-n+4) .tooltip::after {
 #guide-current-profile {
 	position: absolute;
 	left: 20%;
-	top: 40px;
+	top: 45px;
 }
 
 #guide-long-term-profile {
 	position: absolute;
 	right: 20%;
-	top: 40px;
+	top: 45px;
 }
 
 
 #guide-visited {
 	position: absolute;
 	left: 20%;
-	top: 40px;
+	top: 45px;
 }
 
 
 #guide-trackers {
 	position: absolute;
 	right: 20%;
-	top: 40px;
+	top: 45px;
+}
+
+.guide-2 li[data-target="#profile-panel"] {
+	position: relative;
+	z-index: 1000;
+}
+
+.guide-4 #profile-panel,
+.guide-3 #profile-panel{
+	transform: none;
+}
+
+.guide-3 .tab-bar li.is-active, 
+.guide-4 .tab-bar li.is-active {
+	z-index: 9000;
+}
+
+.guide-5 li[data-target="#cookies-panel"]{
+	position: relative;
+	z-index: 1000;
+}
+
+
+.guide-6 #cookies-panel,
+.guide-7 #cookies-panel{
+	transform: none;
+}
+
+.guide-6 .tab-bar li.is-active, 
+.guide-7 .tab-bar li.is-active {
+	z-index: 9000;
+}
+
+.bottom-tab-bar {
+	z-index: auto;
 }
 
 /* Bounce Animation =============================================*/

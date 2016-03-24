@@ -24,6 +24,7 @@
 		</div>
 	</div>
 	<div class="browser-tool-content" style="display: none;" >
+		
 		<!-- =================================================
 			
 			Guide
@@ -34,14 +35,18 @@
 			<div class="step step-1">
 				<img src="tool-img/logo.svg">
 				<p>Welcome, This short guide will help familiarize you with this great tool!</p>
-				<button class="guide-btn" onclick="closeGuide()">Skip</button>
-				<button class="guide-btn guide-btn-main" onclick="nextGuide1()">Tour</button>
+				<div class="guide-nav">
+					<button class="guide-btn" onclick="closeGuide()">Skip</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide1()">Tour</button>
+				</div>
 			</div>
 			
 			<div class="step step-2" style="display: none;">
 				<p><strong>Your Profile</strong> section provides you insights into how you are viewed by third parties based upon your browsing history.</p>
-				<button class="guide-btn" onclick="closeGuide()">Done</button>
-				<button class="guide-btn guide-btn-main" onclick="nextGuide2()">Next</button>
+				<div class="guide-nav">
+					<button class="guide-btn" onclick="closeGuide()">Done</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide2()">Next</button>
+				</div>
 				<div class="guid-arrow bounce" id="guide-profile-tab">
 					<i class="material-icons">arrow_downward</i>
 				</div>
@@ -49,8 +54,10 @@
 			
 			<div class="step step-3" style="display: none;">
 				<p>It is further broken down into two pieces: Your <strong>Current Profile</strong> tells you how you are perceived now and is based on your most recent activity.</p>
-				<button class="guide-btn" onclick="closeGuide()">Done</button>
-				<button class="guide-btn guide-btn-main" onclick="nextGuide3()">Next</button>
+				<div class="guide-nav">
+					<button class="guide-btn" onclick="closeGuide()">Done</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide3()">Next</button>
+				</div>
 				<div class="guid-arrow bounce-up" id="guide-current-profile">
 					<i class="material-icons">arrow_upward</i>
 				</div>
@@ -58,8 +65,10 @@
 			
 			<div class="step step-4" style="display: none;">
 				<p>Your <strong>Long Term Profile</strong> takes into account a deeper view of your browsing.</p>
-				<button class="guide-btn" onclick="closeGuide()">Done</button>
-				<button class="guide-btn guide-btn-main" onclick="nextGuide4()">Next</button>
+				<div class="guide-nav">
+					<button class="guide-btn" onclick="closeGuide()">Done</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide4()">Next</button>
+				</div>
 				<div class="guid-arrow bounce-up" id="guide-long-term-profile">
 					<i class="material-icons">arrow_upward</i>
 				</div>
@@ -67,8 +76,10 @@
 			
 			<div class="step step-5" style="display: none;">	
 				<p>The <strong>Cookies</strong> section is a compilation of the records of the web sites that you have visited as well as the third party trackers that exist in your browser or on your hard drive. </p>
-				<button class="guide-btn" onclick="closeGuide()">Done</button>
-				<button class="guide-btn guide-btn-main" onclick="nextGuide5()">Next</button>
+				<div class="guide-nav">
+					<button class="guide-btn" onclick="closeGuide()">Done</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide5()">Next</button>
+				</div>
 				<div class="guid-arrow bounce" id="guide-cookies-tab">
 					<i class="material-icons">arrow_downward</i>
 				</div>
@@ -76,8 +87,10 @@
 			
 			<div class="step step-6" style="display: none;">	
 				<p>The presence of web site cookies reflects your activity and by extension your likely demographic and interest categories. It paints a portrait of your profile. Cookies describe the third parties that can see part or all of that profile.</p>
-				<button class="guide-btn" onclick="closeGuide()">Done</button>
-				<button class="guide-btn guide-btn-main" onclick="nextGuide6()">Next</button>
+				<div class="guide-nav">
+					<button class="guide-btn" onclick="closeGuide()">Done</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide6()">Next</button>
+				</div>
 				<div class="guid-arrow bounce-up" id="guide-visited">
 					<i class="material-icons">arrow_upward</i>
 				</div>
@@ -85,7 +98,9 @@
 			
 			<div class="step step-7" style="display: none;">	
 				<p>Third party <strong>trackers</strong> exist in your browser or on your hard drive. Here, you can block trackers to keep your browser history information private.</p>
-				<button class="guide-btn guide-btn-main" onclick="closeGuide()">Done</button>
+				<div class="guide-nav">
+					<button class="guide-btn guide-btn-main" onclick="closeGuide()">Done</button>
+				</div>
 				<div class="guid-arrow bounce-up" id="guide-trackers">
 					<i class="material-icons">arrow_upward</i>
 				</div>
@@ -641,7 +656,7 @@
 			            <td><span class="badge">13</span></td>
 			            <td class="on-off" sorttable_customkey="0">
 				            <input type="checkbox" id="bad-traders">
-				            <label for="bad-traders">
+				            <label for="bad-traders"  class="block-all-bad">
 				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
@@ -652,7 +667,7 @@
 			            </td>
 			            <td class="on-off" sorttable_customkey="0">
 				            <input type="checkbox" id="neutral-traders">
-				            <label for="neutral-traders">
+				            <label for="neutral-traders"  class="block-all-bad">
 				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
@@ -662,13 +677,16 @@
 			            <td><span class="badge">213</span></td>
 			            <td class="on-off" sorttable_customkey="0">
 				            <input type="checkbox" id="good-traders">
-				            <label for="good-traders">
+				            <label for="good-traders" class="block-all-bad">
 				            	<i class="material-icons"></i>
 				            </label>
 			            </td>
 			          </tr>
 			        </tbody>
 				</table>
+				<h5>Leave Us Feedback</h5>
+				<textarea placeholder="Type your message here"></textarea>
+				<button class="btn">Send Feedback</button>
 			</div>
 		</div>
 		
@@ -773,37 +791,30 @@
 		}else {
 			$(this).parents('td').attr('sorttable_customkey', 0);
 		}
-		checkIfAllBadBlocked();
 		
 		var updateTable = document.getElementById('tracker-table');
 	});
 	
 	
-	function checkIfAllBadBlocked(){
-		if($('#thirdparty-cookies tr.bad').length == $('#thirdparty-cookies tr.bad.is-disabled').length) $('#thirdparty-cookies').removeClass('has-bad');
-		else $('#thirdparty-cookies').addClass('has-bad');
-	}
-	
-	
 	$('#clear-all-bad').click(function(event){
-			$(this).parents('.frame').find('tr.bad').remove();
-			$(this).parents('.frame').removeClass('has-bad');
+			$(this).parents('.sub-tab-section').find('tr.bad').remove();
+			$(this).parents('.sub-tab-section').removeClass('has-bad');
 	});
 	
-	$('#block-all-bad').click(function(event){
-			$(this).parents('#thirdparty-cookies').find('tr.bad').addClass('is-disabled');
-			$(this).parents('#thirdparty-cookies').find('tr.bad input').prop('checked', true);
-			$(this).parents('#thirdparty-cookies').removeClass('has-bad');
+	$('.block-all-bad').click(function(event){
+			$('#thirdparty-cookies').find('tr.bad').addClass('is-disabled');
+			$('#thirdparty-cookies').find('tr.bad input').prop('checked', true);
+			$('#thirdparty-cookies').removeClass('has-bad');
 	});
 	
 	// Fake Data
-	var r_malep = 0.99,
-			r_femalep = 0.01,
-			children = 0.34,
-			good = 337,
-			bad = 123,
-			neutral = 1233,
-			total_history = good + bad + neutral;
+	var r_malep = 0.33,
+		r_femalep = 0.67,
+		children = 0.34,
+		good = 337,
+		bad = 123,
+		neutral = 1233,
+		total_history = good + bad + neutral;
 	malep = Math.ceil(r_malep*100);
 	femalep = Math.ceil(r_femalep*100);
 	children =  Math.ceil(children*100);
@@ -943,23 +954,31 @@
 	new Chartist.Line('#income-chart-2', income_data, income_options);
 	
 	function nextGuide1(slide){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
+		$('.browser-tool').addClass('guide-2');
 		$('.step').hide();
 		$('.step-2').fadeIn('fast');
 		$('.guide').css('background-color', 'rgba(0, 0, 0, 0.65)');
 	}
 	
 	function nextGuide2(slide){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
+		$('.browser-tool').addClass('guide-3');
 		$('.step').hide();
 		$('.step-3').fadeIn('fast');
 	}
 	
 	function nextGuide3(slide){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
+		$('.browser-tool').addClass('guide-4');
 		$('.step').hide();
 		$('.step-4').fadeIn('fast');
 		$('[data-target="#long-term-profile"]').click();
 	}
 	
 	function nextGuide4(slide){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
+		$('.browser-tool').addClass('guide-5');
 		$('.step').hide();
 		$('.step-5').fadeIn('fast');
 		$('[data-target="#cookies-panel"]').click();
@@ -967,22 +986,29 @@
 	}
 	
 	function nextGuide5(slide){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
+		$('.browser-tool').addClass('guide-6');
 		$('.step').hide();
 		$('.step-6').fadeIn('fast');
 	}
 	
 	function nextGuide6(slide){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
+		$('.browser-tool').addClass('guide-7');
 		$('.step').hide();
 		$('.step-7').fadeIn('fast');
 		$('[data-target="#thirdparty-cookies"]').click();
 	}
 	
 	function closeGuide(){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
 		$('.guide').fadeOut('fast');
 		$('[data-target="#profile-panel"], [data-target="#current-profile"]').click();
 	}
 	
 	function openGuide(){
+		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
+		$('.browser-tool').addClass('guide-1');
 		$('.guide').fadeIn('fast').css('background-color', 'rgba(0, 0, 0, 0.80)');
 		$('.step').hide();
 		$('.step-1').fadeIn('fast');

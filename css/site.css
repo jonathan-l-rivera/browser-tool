@@ -1930,6 +1930,7 @@ img {
   background-size: cover;
   padding-top: 60px;
   padding-bottom: 60px;
+  color: #ccc;
 }
 .contact-feature-block.active .feature-block-heading {
   -webkit-animation-duration: 1s;
@@ -2537,7 +2538,7 @@ img {
     padding-right: 15px;
     position: relative;
     float: left;
-    width: 50%;
+    width: 25%;
     min-height: 280px;
   }
   .contact-block-content {

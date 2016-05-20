@@ -25,11 +25,15 @@
 	</div>
 	<div class="browser-tool-content" style="display: none;" >
 		
-		<!-- =================================================
-			
-			Guide
-			
-		====================================================-->
+		<div class="notice" id="error">
+			<div class="step">
+				<p>It looks like something has gone wrong. We apologize for the inconvenience. Please restart the extension. You can also send us a report to help us identify and fix the issue.</p>
+				<div class="notice-nav">
+					<button class="notice-btn" onclick="closeNotice()">Send Report</button>
+					<button class="notice-btn guide-btn-main" onclick="closeNotice()">Reload</button>
+				</div>
+			</div>
+		</div>
 		
 		<div class="guide">
 			<div class="step step-1">
@@ -1018,6 +1022,10 @@
 	function closeNoti(){
 		
 		$('.notification').fadeOut('fast');
+	}
+	
+	function closeNotice(){
+		$('.notice').fadeOut('fast');
 	}
 	
 </script>

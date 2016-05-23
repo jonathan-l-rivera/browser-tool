@@ -1685,6 +1685,15 @@ img {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
 }
+
+.page-header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  background-color: #000;
+  background-image: none;
+}
+
 .logo {
   width: 350px;
   height: 100px;
@@ -2401,6 +2410,15 @@ img {
   margin-left: 0;
   padding-left: 0;
   border-left-color: transparent;
+}
+
+.footer-nav-list{
+	list-style: none;
+	text-align: center;
+}
+.footer-nav-list li {
+	display: inline-block;
+	padding: 0 10px;
 }
 
 @media only screen and (min-width: 740px) {

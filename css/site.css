@@ -3072,3 +3072,162 @@ img {
 .screen-item img {
 	display: block;
 }
+
+
+
+/* ====================================
+	
+	Form
+	
+======================================*/
+
+.form-long-row {
+  display: flex; }
+  .form-long-row [class*='col'] {
+    margin-right: 0; }
+    .form-long-row [class*='col']:last-of-type {
+      margin-right: 0; }
+    .form-long-row [class*='col'] > [class*='col']:last-of-type {
+      margin-bottom: 0; }
+    .form-long-row [class*='col'] > .row {
+      margin-bottom: 0; }
+  @media (max-width: 767px) {
+    .form-long-row {
+      flex-wrap: wrap; } }
+  @media (max-width: 767px) {
+    .form-long-row {
+      flex-wrap: wrap; } }
+
+.form-long-field {
+  position: relative;
+  width: 100%;
+  border-right: 2px solid #ebebeb; }
+  .form-long-field::before,
+  .form-long-field::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #ebebeb;
+    transition: all 0.2s; }
+  .form-long-field::after {
+    width: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  .form-long-field > label {
+    display: block;
+    padding: 0 0.75rem;
+    transform-origin: top left;
+    line-height: 2.25rem;
+    transform: scale(1) translate3d(0, 2.25rem, 0);
+    transition: all 0.2s; }
+  .form-long-field label.is-active,
+  .form-long-field.is-filled label,
+  .form-long-field.is-focused label {
+    color: #323232;
+    transform: scale(0.9) translate3d(0, 0.75rem, 0); }
+  .form-long-field.is-filled::after,
+  .form-long-field.is-focused::after {
+    width: 100%;
+    background: #7d7d7d; }
+  .form-long-field.is-filled.is-valid::after,
+  .form-long-field.is-focused.is-valid::after,
+  .form-long-field.is-valid::after {
+    width: 100%;
+    background: #65a8b8; }
+  .form-long-field.is-filled.is-error::after,
+  .form-long-field.is-focused.is-error::after,
+  .form-long-field.is-error::after {
+    width: 100%;
+    background: #eb6054; }
+  .form-long-field .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transform: translateY(-0.75rem);
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; }
+  .form-long-field.is-error .icon,
+  .form-long-field.is-valid .icon {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible; }
+  .form-long-field.is-error .icon::after {
+    content: '\f05c';
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    transform: translate3d(-50%, -50%, 0);
+    color: #eb6054; }
+  .form-long-field.is-valid .icon::after {
+    content: '\f05d';
+    position: absolute;
+    top: 1.5rem;
+    transform: translate3d(-50%, -50%, 0);
+    color: #a6d66d; }
+  .form-long-field input[type="text"],
+  .form-long-field input[type="email"],
+  .form-long-field input[type="password"] {
+    display: block;
+    text-align: left;
+    width: 100%;
+    height: 3rem;
+    padding: 0 0.75rem; 
+    border: none;}
+    .form-long-field input[type="text"]:focus,
+    .form-long-field input[type="email"]:focus,
+    .form-long-field input[type="password"]:focus {
+      outline: 0; }
+  .form-long-field select {
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    height: 3rem;
+    padding: 0 0.75rem; }
+  .form-long-field .select-arrow {
+    background: url(../img/icon-dropdown-select.svg);
+    height: 2.25rem;
+    width: 2.25rem;
+    background-size: cover;
+    position: absolute;
+    right: 1.125rem;
+    bottom: 1.5rem;
+    z-index: -1; }
+  .form-long-field.multi-select-field select {
+    border: #ebebeb solid 2px;
+    width: auto;
+    height: 2.25rem;
+    display: inline-block;
+    border-radius: 0;
+    padding-right: 1.5rem;
+    background: url(../img/icon-select-arrow.svg) no-repeat;
+    background-position: right center;
+    margin: 0.75rem 0 0.75rem 0.75rem; }
+  .form-long-field.dob-field input[type="text"] {
+    display: inline-block;
+    width: 30%; }
+  .form-long-field.dob-field span {
+    width: 3%; }
+
+.form-long-optin {
+  margin-top: 3rem; }
+  .form-long-optin p {
+    font-size: 0.75rem; }
+
+.form-long-heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 3rem auto; }
+
+.form-long-title {
+  margin-bottom: 0; }

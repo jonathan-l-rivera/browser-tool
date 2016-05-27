@@ -1692,6 +1692,8 @@ img {
   position: relative;
   background-color: #000;
   background-image: none;
+  background: url(../img/banner.jpg) 0 0 no-repeat;
+  background-size: cover;
 }
 
 .logo {

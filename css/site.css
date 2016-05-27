@@ -3183,6 +3183,16 @@ img {
     .form-long-field input[type="email"]:focus,
     .form-long-field input[type="password"]:focus {
       outline: 0; }
+  .form-long-field textarea {
+    font-family: Open Sans, arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: block;
+    text-align: left;
+    width: 100%;
+    height: 7.5rem;
+    padding: 0 0.75rem;
+    border: none; }
   .form-long-field select {
     font-size: 1rem;
     -webkit-appearance: none;
@@ -3231,3 +3241,63 @@ img {
 
 .form-long-title {
   margin-bottom: 0; }
+
+.error-message {
+	margin: 0;
+	padding: 0;
+	background: #ebebeb;
+	text-align: center;
+	transition: all 0.3s ease;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.is-focused.is-error .error-message{
+	opacity: 1;
+	visibility: visible;
+	margin: 0.5625rem;
+	padding: 0.5625rem;
+}
+
+.register-section {
+	margin: 40px auto;
+}
+
+.register-section .button {
+	margin: 40px auto;
+	display: block;
+}
+.section-header {
+	text-align: center;
+	max-width: 800px;
+	margin: 40px auto;
+}
+
+.row {
+	display: flex;
+	flex: 1;
+}
+
+.col {
+	flex-grow: 1;
+	width: 100%
+}
+
+.callout {
+  background-color: whitesmoke;
+  padding: 2.25rem; }
+
+.callout-title {
+  font-family: Open Sans, arial, sans-serif;
+  color: #050505;
+  font-weight: bold;
+  font-size: 1.77778rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  margin: 0; }
+
+.callout-caption {
+  color: #232323;
+  font-size: 1.33333rem;
+  line-height: 2.25rem;
+  margin-top: 0.75rem; }

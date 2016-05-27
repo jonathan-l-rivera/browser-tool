@@ -81,7 +81,7 @@ function validator(form, args) {
 				var val = element.value;
 				if (validateMethods.required(element)) {
 					var str = element.value;
-					var phone2 = /^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/;
+					var phone2 = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/g;
 					if (str.match(phone2)) {
 						return true;
 					} else {
@@ -270,6 +270,7 @@ function validator(form, args) {
 			}
 			
 			if(element.hasAttribute('data-min')) { 
+				console.log('Min');
 				if(element.value.length < Number(element.getAttribute('data-min'))){
 					parent_el.classList.remove('is-valid');
 					parent_el.classList.add('is-error');
@@ -313,8 +314,10 @@ function validator(form, args) {
 					continue;
 				}
 				
+				var message = self.validate_fields[i].getAttribute('data-message');
 				self.message.errors ++;
-				self.message.fields.push(self.validate_fields[i].getAttribute('data-message'));
+				self.message.fields.push(message);
+				self.validate_fields[i].parentNode.querySelector('.error-message').innerHTML = message;
 				self.isValid = false;
 			}
 			if (self.isValid) {
@@ -435,9 +438,7 @@ function fieldControlBlur(event){
 	
 
 var field_elements = document.querySelectorAll('.field-element')
-for (i =0; i < field_elements.length; i++) {
-	console.log('Better');
-	
+for (i =0; i < field_elements.length; i++) {	
 	field_elements[i].addEventListener('focus', fieldControlFocus);
 	field_elements[i].addEventListener('blur', fieldControlBlur);
 }

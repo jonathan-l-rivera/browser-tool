@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Title of the document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+
+<body>
+    <div class="page-header">
+        <div class="header-inner container clear">
+            <a class="logo" href="#"><span class="sr">Vestigium</span></a> <input type="checkbox" id="navigation-toggle-checkbox" name="navigation-toggle-checkbox" class="navigation-toggle-checkbox none"> <label for="navigation-toggle-checkbox" class="navigation-toggle-label" onclick=""><span class="navigation-toggle-label-inner"><span class="sr">Navigation</span></span></label>
+
+            <div class="navigation">
+                <ul class="navigation-menu">
+                    <li class="navigation-item">
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li class="navigation-item">
+                        <a href="index.html#services">Features</a>
+                    </li>
+
+                    <li class="navigation-item">
+                        <a href="index.html#download">Download</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	 	<section class="section-spacing-1 register-section">
+		 	<div class="container">
+	            <header class="section-header">
+			            <h2>Need Help? Get In Touch.</h2>
+		                <p class="leader">Please call 0808-189-0346 to speak with a customer service representative. If you prefer, you can submit an online request. Use the form provided below and we'll get back to you as soon as we can.</p>
+		            </header>
+		
+		            <form class="form-long" id="register">
+		                <div class="form-long-row">
+		
+		                    <div class="form-long-field">
+		                        <label for="first_name" >First Name</label> <input type="text" name="Customer[first_name]" class="validate field-element" id="first_name" maxlength="30" required="" data-message="Please input a valid First Name.">
+		                    </div>
+		
+		                    <div class="form-long-field">
+		                        <label for="surname">Surname</label> <input type="text" name="Customer[surname]" class="validate field-element" id="surname" maxlength="30" required="" data-message="Please input a valid Surname.">
+		                    </div>
+		                    
+		                    
+		                    <div class="form-long-field">
+		                        <label for="postcode">Post Code</label> <input type="text" name="Customer[home_address_postcode]" class="validate field-element" id="postcode" maxlength="8" required data-message="Please input your Postcode">
+		                    </div>
+		                    
+		                </div>
+						
+		                <div class="form-long-row">
+		                    <div class="form-long-field">
+		                        <label for="email_address" class="is-active">Email Address</label> <input type="text" name="Customer[email_address]" class="validate field-element" id="email_address" maxlength="60" value="johnny@hotmail.com" required="" data-validate="isEmail" data-message="Please input a valid email.">
+		                    </div>
+		                    <div class="form-long-field">
+		                        <label for="phone_number">Phone</label> <input type="text" name="Customer[phone_number]" class="validate field-element" id="phone_number" maxlength="11" required="" data-validate="isPhone" data-message="Please input a valid Phone number.">
+		                    </div>
+		                </div>
+		                <div class="form-long-row">
+		                    <div class="form-long-field">
+		                        <label for="message">Message</label>
+		                        <textarea name="message" class="validate field-element" id="message" required data-message="Please input a message."></textarea>
+		                    </div>
+		                </div>
+		
+		               <button type="submit" class="button">Send</button>
+		            </form>
+		 	</div>
+    </section>
+    <section class="callout">
+	    <div class="container">
+	    	<div class="row">
+				<div class="col">
+					<p>
+						<strong>Address</strong><br>
+						Credit Reports Matter<br>
+						3rd Floor 207<br>
+						Regent Street<br>
+						London<br>
+						W1B 3HH
+					</p>
+					</div>
+					<div class="col">
+						<p><strong>Phone</strong><br>
+							0808-189-0346</p>
+						<p><strong>Opening Hours:</strong><br>
+							Monday - Friday<br>
+							8:00am - 5:30pm
+						</p>
+					</div>
+					<div class="col">
+						<p>
+						Calls made after 5:30pm may leave a voicemail for a return call. Calls to 080 numbers are normally free from landlines and most mobiles.
+						</p>
+					</div>
+	    		</div>
+	    	</div>
+	    </div>
+    </section>
+    <div class="footer">
+        <div class="footer-inner container">
+	        
+            <nav class="footer-nav">
+                <ul class="footer-nav-list"
+	                <li><a href="terms.html">Terms of Agreement</a></li>
+	                <li><a href="license.html">License Agreement</a></li>
+	                <li><a href="cookies.html">Cookie Policy</a></li>
+                </ul>
+            </nav>
+            <div class="clear">
+                <div class="footer-column col-8-tablet">
+                    <p>&copy; Copyright 2015 &mdash; All Rights Reserved</p>
+                </div>
+                <div class="footer-column col-4-tablet">
+                    <ul class="footer-social-list icon-list-inline">
+                        <li class="navigation-item-social">
+                            <a class="social-icon social-linkedin" href="#"><span class="sr">LinkedIn</span></a>
+                        </li>
+
+                        <li class="navigation-item-social">
+                            <a class="social-icon social-facebook" href="#"><span class="sr">Facebook</span></a>
+                        </li>
+
+                        <li class="navigation-item-social">
+                            <a class="social-icon social-twitter" href="#"><span class="sr">Twitter</span></a>
+                        </li>
+
+                        <li class="navigation-item-social">
+                            <a class="social-icon social-youtube" href="#"><span class="sr">YouTube</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <script src="js/form.js"></script>
+   <script>
+	   var form_register = document.getElementById('register');
+	   var registerForm  = new validator(form_register, {
+		   success : function(form){
+			   console.log('Do Something');
+			   form.submit();
+		   },
+	   });
+	</script>
+</body>

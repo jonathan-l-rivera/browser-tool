@@ -10,10 +10,10 @@
 
 <body>
 	
-<div class="notification">
+<div class="notification" id="questionable" style="display: none;">
 	<p>You are about to enter a website that is deemed questionable based on our records. Do you wish to continue?</p>
-			<button class="guide-btn guide-btn-main" onclick="closeNoti()">Yes, Proceed</button>
-			<button class="guide-btn guide-btn" onclick="closeNoti()">No, Take me back</button>
+			<button class="guide-btn guide-btn-main" onclick="closeNoti('questionable')">Yes, Proceed</button>
+			<button class="guide-btn guide-btn" onclick="closeNoti('questionable')">No, Take me back</button>
 
 </div>
 
@@ -23,19 +23,42 @@
 			<img src="tool-img/icon.png">
 		</div>
 	</div>
-	<div class="browser-tool-content" style="display: none;" >
-		
-		<div class="notice" id="error">
+	<div class="browser-tool-content">
+		<div class="notice" id="unique-key"  style="display: none;" >
+			<button class="notice-close-btn" onclick="closeNotice('unique-key')"><i class="material-icons">close</i></button>
 			<div class="step">
-				<p>It looks like something has gone wrong. We apologize for the inconvenience. Please restart the extension. You can also send us a report to help us identify and fix the issue.</p>
-				<div class="notice-nav">
-					<button class="notice-btn" onclick="closeNotice()">Send Report</button>
-					<button class="notice-btn guide-btn-main" onclick="closeNotice()">Reload</button>
+				<div class="callout-form">
+					<p class="callout-form-title">Enter Your Unique Key</p>
+					<input class="field-element" type="text" name="key" placeholder="Key"><button class="notice-btn" onclick="submitKey(this)">Submit</button>
+				</div>
+				<div id="key-notices">
+					<p id="unique-key-error">Don't have a unique key?</p>
+					<a class="notice-btn" target="_blank" href="purchase.html" onclick="closeNotice('unique-key')">Purchase a Unique Key</a>
 				</div>
 			</div>
 		</div>
 		
-		<div class="guide">
+		<div class="notice" id="error"  style="display: none;" >
+			<div class="step">
+				<p>It looks like something has gone wrong. We apologize for the inconvenience. Please restart the extension. You can also send us a report to help us identify and fix the issue.</p>
+				<div class="notice-nav">
+					<button class="notice-btn" onclick="closeNotice('error')">Send Report</button>
+					<button class="notice-btn guide-btn-main" onclick="closeNotice('error')">Reload</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="notice" id="flash-cookie-unlocked"  style="display: none;" >
+			<div class="step">
+				<p><strong>Flash cookies could track your web browsing long after you have left the site, because they are stored independent of your browser.</strong></p>
+				<p>We have detected <a href="#">657</a> flash cookies on your computer and we can instantly delete them for you at your request</p>
+				<div class="notice-nav">
+					<button class="notice-btn" onclick="closeNotice('flash-cookie-unlocked'); ">Delete Flash Cookies</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="guide"  style="display: none;" >
 			<div class="step step-1">
 				<img src="tool-img/logo.svg">
 				<p>Welcome, This short guide will help familiarize you with this great tool!</p>
@@ -402,6 +425,10 @@
 				</li>
 				<li class="js-go-to-frame" data-target="#thirdparty-cookies">Trackers 
 				<span class="badge noti-number">1</span></li>
+				
+                <li class="js-go-to-frame" data-target="#flash-cookies">Advanced Options
+                    <span id="total-number-thirdparty" class="badge noti-number">1</span>
+                </li>
 			</ul>
 			
 			<!-- Website Cookies ================================-->
@@ -419,69 +446,69 @@
 					</tr>
 				</table>
 				<div class="clear-all-btn-container">
-					<a href="#" class="clear-all-btn" id="clear-all-bad">Clear All Bad History</a>
+					<a href="#" class="clear-all-btn" onclick="clearBad(event, this);">Clear All Bad History</a>
 				</div>
 					
-					<!-- Gender ================================-->
-				<div class="content frame history">
+				<!-- Items ================================-->
+				<div class="content frame history fixed-thead">
 					<table class="sortable">
 						<thead>
 							<tr>
 								<th>Site</th>
-								<th style="text-align:right;">Date Visited</th>
-								<th style="text-align:right;">Time Spent</th>
+								<th>Date Visited</th>
+								<th>Time Spent</th>
 							</tr>
 						</thead>
 			        	<tbody id="site-cookies">
 							<tr class="good">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr>
 							<tr class="bad">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr> 
 							<tr class="neutral">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr> 
 							<tr class="good">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr>
 							<tr class="neutral">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr>
 							<tr class="bad">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr> 
 							<tr class="bad">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr> 
 							<tr class="neutral">
 								<td><span class="color-circle"></span>domain name</td>
-								<td class="align-right">1/1/16</td>
-								<td class="align-right">2:30:34</td>
+								<td>1/1/16</td>
+								<td>2:30:34</td>
 							</tr>
 				    	</tbody>
 					</table>
@@ -504,14 +531,14 @@
 						</td>
 					</tr>
 				</table>
-					<!-- Gender ================================-->
-				<div class="content frame history"> 
+				<!-- Items ================================-->
+				<div class="content frame history fixed-thead"> 
 			      <table class="sortable" id='tracker-table'>
 				      <thead>
 							<tr>
 								<th>Site</th>
-								<th style="text-align:center;">Date Visited</th>
-								<th style="text-align:center;">Type</th>
+								<th>Date Visited</th>
+								<th>Type</th>
 								<th style="text-align:center;" class="sorttable_nosort">Block</th>
 							</tr>
 						</thead>
@@ -631,6 +658,110 @@
 			      </table>
 				</div>
 			</div>
+			
+			<!-- Flash Cookies ================================-->
+            <div class="frame-2 frame sub-tab-section off-right" id="flash-cookies">
+                
+                <!-- Items ================================-->
+                <div class="content frame history" style="top:0;">
+	                <div class="inner-content">
+		                <div class="advanced-options-message">
+	                		<p><strong>Flash cookies could track your web browsing long after you have left the site, because they are stored independent of your browser.</strong></p>
+							<p>We have detected <a href="#" onclick="goToFrame(this, '#flash-cookies-2');">657</a> flash cookies on your computer and we can instantly delete them for you at your request</p>
+							<a href="#" onclick="openNotice('unique-key');" class="clear-all-btn">Delete Flash Cookies</a>
+		                </div>
+	                </div>
+                </div>
+            </div>
+            <div class="frame-2 frame sub-tab-section off-right has-bad" id="flash-cookies-2">	            			      	
+				<div class="clear-all-btn-container">
+					<a href="#" class="clear-all-btn" onclick="clearBad(event, this, 'all');">Remove All Flash Cookies</a>
+				</div>
+                <div class="content frame history fixed-thead" style="top:0;">
+			      	<table class="sortable" id='tracker-table'>
+				      	<thead>
+							<tr>
+								<th>Site</th>
+								<th>Date Placed</th>
+								<th style="text-align:center;" class="sorttable_nosort">Remove</th>
+							</tr>
+						</thead>
+			        <tbody id="third-cookies">
+			          <tr class="good">
+			            <td><span class="color-circle"></span>domain name</td>
+			            <td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="good">
+			           	<td><span class="color-circle"></span>domain name</td>
+			           	<td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>domain name</td>
+			           	</td><td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="good">
+			            <td><span class="color-circle"></span>domain name</td>
+			            <td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>domain name</td>
+			           	<td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          
+			          <tr class="good">
+			            <td><span class="color-circle"></span>domain name</td>
+			            <td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="good">
+			           	<td><span class="color-circle"></span>domain name</td>
+			           	<td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>domain name</td>
+			           	<td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="good">
+			            <td><span class="color-circle"></span>domain name</td>
+			            <td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			          <tr class="bad">
+			           	<td><span class="color-circle"></span>domain name</td>
+			           	<td>1/1/16</td>
+			            <td sorttable_customkey="0">
+				        	<a class="remove-item" onclick="removeCookieItem(this);"><i class="material-icons">close</i></a>
+			            </td>
+			          </tr>
+			        </tbody>
+			      </table>
+				</div>
+            </div>
 		</div>
 		
 		<div class="frame off-right" id="settings-panel">
@@ -647,7 +778,7 @@
 				            <span class="badge">513</span>
 				         </td>
 			            <td class="on-off" sorttable_customkey="0">
-				           <a href="#" class="clear-all-btn" id="clear-all-bad">Clear All</a>
+				           <a href="#" class="clear-all-btn" onclick="clearBad(event, this);">Clear All</a>
 				         </td>
 			          </tr>
 				</table>
@@ -697,8 +828,8 @@
 		<!-- Main Tabs ================================-->
 		<ul class="bottom-tab-bar">
 			<li class="js-go-to-frame is-active" data-target="#profile-panel"><i class="material-icons">person_outline</i> Your Profile</li>
-			<li class="js-go-to-frame" data-target="#cookies-panel"><i class="material-icons">remove_red_eye</i> Cookies 
-				<span class="badge noti-number-tot">1</span></li>
+			<li class="js-go-to-frame" data-target="#cookies-panel"><i class="material-icons">web</i> Your Activity
+                <span class="badge noti-number-tot">1</span></li>
 			<li class="small" onclick="openGuide()"><i class="material-icons">help_outline</i></li>
 			<li class="js-go-to-frame small" data-target="#settings-panel"><i class="material-icons">settings</i></li>
 		</ul>
@@ -797,12 +928,6 @@
 		}
 		
 		var updateTable = document.getElementById('tracker-table');
-	});
-	
-	
-	$('#clear-all-bad').click(function(event){
-			$(this).parents('.sub-tab-section').find('tr.bad').remove();
-			$(this).parents('.sub-tab-section').removeClass('has-bad');
 	});
 	
 	$('.block-all-bad').click(function(event){
@@ -957,6 +1082,19 @@
 	new Chartist.Line('#income-chart-1', income_data, income_options);
 	new Chartist.Line('#income-chart-2', income_data, income_options);
 	
+	
+	
+	
+	function clearBad(event, element, select){
+		if(select == 'all') {
+			$(element).parents('.sub-tab-section').find('tbody tr').remove();
+			$(element).parents('.sub-tab-section').removeClass('has-bad');
+		}else {
+			$(element).parents('.sub-tab-section').find('tr.bad').remove();
+			$(element).parents('.sub-tab-section').removeClass('has-bad');
+		}
+	};
+	
 	function nextGuide1(slide){
 		$('.browser-tool').removeClass('guide-1 guide-2 guide-3 guide-4 guide-5 guide-6 guide-7');
 		$('.browser-tool').addClass('guide-2');
@@ -1019,13 +1157,56 @@
 		$('[data-target="#profile-panel"], [data-target="#current-profile"], [data-target="#website-cookies"]').click();
 	}
 	
-	function closeNoti(){
-		
-		$('.notification').fadeOut('fast');
+	function closeNoti(id){
+		$('#' + id).fadeOut('fast');
 	}
 	
-	function closeNotice(){
-		$('.notice').fadeOut('fast');
+	function closeNotice(id){
+		$('#' + id).fadeOut('fast');
+	}
+	
+	function openNotice(id) {
+		$('#' + id).fadeIn('fast');
+	}
+	
+	function goToFrame(element, target){
+		var parent = $(element).parent();
+		$(target).removeClass('off-right');
+		$(target).removeClass('off-left');
+		$(target).siblings('.frame').each(function(){
+			if($(element).index() > $(target).index()) {
+				$(this).removeClass('off-left');
+				$(this).addClass('off-right');
+			}else {
+				$(this).removeClass('off-right');
+				$(this).addClass('off-left');
+			}
+		});
+		parent.find('.is-active').removeClass('is-active');
+		$(element).addClass('is-active');
+		$(target).parent().find('.current-frame').removeClass('current-frame');
+		$(target).addClass('current-frame');
+	};
+	
+	$('.fixed-thead').scroll(function(){
+		var top = $(this).scrollTop();
+		$(this).find('thead').css('transform', 'translateY(' + top + 'px)');
+	});
+	
+	function submitKey(element) {
+		var value = $('[name="key"]').val();
+		if(value == 'test') {
+			closeNotice('unique-key');
+			goToFrame(element, '#flash-cookies-2');
+			$('#key-notices').remove();
+		}else {
+			$('#unique-key-error').text('Sorry, this isn\'t a valid key.');
+		}
+	}
+	
+	function removeCookieItem(element) {
+		console.log(element);
+		$(element).parents('tr').remove();
 	}
 	
 </script>

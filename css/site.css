@@ -1839,6 +1839,18 @@ img {
   margin-top: -100px;
   position: relative;
 }
+
+.services-block-inner {
+	display: flex;
+}
+
+.services-block-inner [class^="col"]{
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	justify-content: center;
+	float: none;
+}
 .services-list {
   list-style: none;
   padding: 0;

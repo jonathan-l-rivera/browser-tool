@@ -10,7 +10,7 @@
 
 <body>
 	
-<div class="notification" id="questionable" style="display: none;">
+<div class="notification" id="questionable"   style="display: none;" >
 	<p>You are about to enter a website that is deemed questionable based on our records. Do you wish to continue?</p>
 			<button class="guide-btn guide-btn-main" onclick="closeNoti('questionable')">Yes, Proceed</button>
 			<button class="guide-btn guide-btn" onclick="closeNoti('questionable')">No, Take me back</button>
@@ -24,9 +24,25 @@
 		</div>
 	</div>
 	<div class="browser-tool-content">
+		<div class="notice" id="share"  style="display: none;" >
+			<button class="notice-close-btn" onclick="closeNotice('share')"><i class="material-icons">close</i></button>
+				<img src="tool-img/logo.svg">
+				<p><strong>You took control of your browsing history,<br/>now help your friends do the same!</strong></p>
+				<div id="key-notices">
+					<button class="share-icon share-icon-google" data-url="https://plus.google.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd">
+						<img src="img/icons/share-google-plus.svg">
+					</button>
+					<button class="share-icon share-icon-facebook" data-url="https://www.facebook.com/dialog/share?app_id=650988901719679&display=popup&href=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd">
+						<img src="img/icons/share-facebook.svg">
+					</button>
+					<button class="share-icon share-icon-twitter" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=I just saw what my online profile looks like and how companies see me! &amp;hashtags=YourBrowserInsights">
+						<img src="img/icons/share-twitter.svg">
+					</button>
+				</div>
+		</div>
 		<div class="notice" id="unique-key"  style="display: none;" >
 			<button class="notice-close-btn" onclick="closeNotice('unique-key')"><i class="material-icons">close</i></button>
-			<div class="step">
+			<div>
 				<div class="callout-form">
 					<p class="callout-form-title">Enter Your Unique Key</p>
 					<input class="field-element" type="text" name="key" placeholder="Key"><button class="notice-btn" onclick="submitKey(this)">Submit</button>
@@ -164,6 +180,11 @@
 					<div class="content gender frame">  
 							<div class="inner-content">      
 								<div class="gender-chart" id="gender-chart-1"></div>
+								<div class="share-result">
+									<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I'm a woman! See what it knows about you! &amp;hashtags=YourBrowserInsights">
+										<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+									</button>
+								</div>
 							</div>
 					</div>
 					
@@ -171,6 +192,11 @@
 					<div class="content age off-right frame">
 						<div class="inner-content">
 								<div class="age-chart" id="age-chart-1"></div>
+								<div class="share-result">
+									<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I'm 25-35 years old. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+										<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+									</button>
+								</div>
 						</div>
 					</div>
 					
@@ -178,6 +204,11 @@
 					<div class="content children off-right frame">
 						<div class="inner-content">      
 								<div class="children-chart" id="children-chart-1"></div>
+								<div class="share-result">
+									<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I don't have kids! See what it knows about you! &amp;hashtags=YourBrowserInsights">
+										<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+									</button>
+								</div>
 						</div>
 					</div>
 					
@@ -185,6 +216,11 @@
 					<div class="content education off-right frame">
 						<div class="inner-content">	
 							<div class="education-chart" id="education-chart-1"></div>
+							<div class="share-result">
+								<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my education level. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+									<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+								</button>
+							</div>
 						</div>
 					</div>
 					
@@ -192,88 +228,101 @@
 					<div class="content income off-right frame">
 						<div class="inner-content">
 								<div class="income-chart" id="income-chart-1"></div>
+								<div class="share-result">
+									<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows how much money I make. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+										<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+									</button>
+								</div>
 						</div>
 					</div>
 					
 					<!-- Interests ================================-->
 					<div class="content interests off-right frame">
-						<table >
-					    <tbody>
-					      <tr>
-					        <td>Liesure & Hobbies</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:23.7%"></div></div></td>
-					        <td>23.7%</td>
-								</tr>
-								<tr>
-					        <td>Food & Drink</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:3.52%"></div></div></td>
-					        <td>3.52%</td>
-								</tr>
-								<tr>
-					        <td>Beauty & Fitness</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:3.04%"></div></div></td>
-					        <td>3.04%</td>
-								</tr>
-								<tr>
-					        <td>Home & Garden</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:2.77%"></div></div></td>
-					        <td>2.77%</td>
-								<tr>
-					        <td>Science</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:2.73%"></div></div></td>
-					        <td>2.73%</td>
-								</tr>
-								<tr>
-					        <td>Travel</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:2.52%"></div></div></td>
-					        <td>2.52%</td>
-								</tr>
-								<tr>
-					        <td>News</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:2.41%"></div></div></td>
-					        <td>2.41%</td>
-								</tr>
-								<tr>
-					        <td>Education & Employement</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:2.38%"></div></div></td>
-					        <td>2.38%</td>
-								<tr>
-					        <td>Arts & Entertainment</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:2.19%"></div></div></td>
-					        <td>2.19%</td>
-								</tr>
-								<tr>
-					        <td>Computers & Technology</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:1.66%"></div></div></td>
-					        <td>1.66%</td>
-								</tr>
-								<tr>
-					        <td>Business & Industry</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:1.51%"></div></div></td>
-					        <td>1.51%</td>
-								</tr>
-								<tr>
-					        <td>Sports</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:1.37%"></div></div></td>
-					        <td>1.37%</td>
-								</tr>
-								<tr>
-					        <td>Shopping</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:1.31%"></div></div></td>
-					        <td>1.31%</td>
-								</tr>
-								<tr>
-					        <td>Automotive & Vehicle</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:1.31%"></div></div></td>
-					        <td>1.31%</td>
-								</tr>
-								<tr>
-					        <td>Video Games</td>
-					        <td><div class="percent-bar"><div class="percentage" style="width:1.24%"></div></div></td>
-					        <td>1.24%</td>
-					      </tr>
-					    </tbody>
-						</table>
+						<div class="inner-content">
+							<table>
+							    <tbody>
+							      <tr>
+							        <td>Liesure & Hobbies</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:23.7%"></div></div></td>
+							        <td>23.7%</td>
+										</tr>
+										<tr>
+							        <td>Food & Drink</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:3.52%"></div></div></td>
+							        <td>3.52%</td>
+										</tr>
+										<tr>
+							        <td>Beauty & Fitness</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:3.04%"></div></div></td>
+							        <td>3.04%</td>
+										</tr>
+										<tr>
+							        <td>Home & Garden</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:2.77%"></div></div></td>
+							        <td>2.77%</td>
+										<tr>
+							        <td>Science</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:2.73%"></div></div></td>
+							        <td>2.73%</td>
+										</tr>
+										<tr>
+							        <td>Travel</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:2.52%"></div></div></td>
+							        <td>2.52%</td>
+										</tr>
+										<tr>
+							        <td>News</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:2.41%"></div></div></td>
+							        <td>2.41%</td>
+										</tr>
+										<tr>
+							        <td>Education & Employement</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:2.38%"></div></div></td>
+							        <td>2.38%</td>
+										<tr>
+							        <td>Arts & Entertainment</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:2.19%"></div></div></td>
+							        <td>2.19%</td>
+										</tr>
+										<tr>
+							        <td>Computers & Technology</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:1.66%"></div></div></td>
+							        <td>1.66%</td>
+										</tr>
+										<tr>
+							        <td>Business & Industry</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:1.51%"></div></div></td>
+							        <td>1.51%</td>
+										</tr>
+										<tr>
+							        <td>Sports</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:1.37%"></div></div></td>
+							        <td>1.37%</td>
+										</tr>
+										<tr>
+							        <td>Shopping</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:1.31%"></div></div></td>
+							        <td>1.31%</td>
+										</tr>
+										<tr>
+							        <td>Automotive & Vehicle</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:1.31%"></div></div></td>
+							        <td>1.31%</td>
+										</tr>
+										<tr>
+							        <td>Video Games</td>
+							        <td><div class="percent-bar"><div class="percentage" style="width:1.24%"></div></div></td>
+							        <td>1.24%</td>
+							      </tr>
+							    </tbody>
+							</table>
+						
+							<div class="share-result">
+								<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my interests. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+									<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -830,6 +879,7 @@
 			<li class="js-go-to-frame is-active" data-target="#profile-panel"><i class="material-icons">person_outline</i> Your Profile</li>
 			<li class="js-go-to-frame" data-target="#cookies-panel"><i class="material-icons">web</i> Your Activity
                 <span class="badge noti-number-tot">1</span></li>
+                <li class="small" onclick="openNotice('share')"><i class="material-icons">share</i></li>
 			<li class="small" onclick="openGuide()"><i class="material-icons">help_outline</i></li>
 			<li class="js-go-to-frame small" data-target="#settings-panel"><i class="material-icons">settings</i></li>
 		</ul>
@@ -1208,6 +1258,38 @@
 		console.log(element);
 		$(element).parents('tr').remove();
 	}
+	/**
+	* jQuery function to prevent default anchor event and take the href * and the title to make a share pupup
+	*
+	* @param  {[object]} e           [Mouse event]
+	* @param  {[integer]} intWidth   [Popup width defalut 500]
+	* @param  {[integer]} intHeight  [Popup height defalut 400]
+	* @param  {[boolean]} blnResize  [Is popup resizeabel default true]
+	*/
+	$.fn.customPopup = function (e, intWidth, intHeight, blnResize) {
+	
+		// Prevent default anchor event
+		e.preventDefault();
+		
+		// Set values for window
+		intWidth = intWidth || '500';
+		intHeight = intHeight || '400';
+		strResize = (blnResize ? 'yes' : 'no');
+		
+		// Set title and open popup with focus on it
+		var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
+		    strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,            
+		    objWindow = window.open(this.attr('data-url'), strTitle, strParam).focus();
+	}
+	
+	/* ================================================== */
+	$('.share-icon').click(function(e) {
+		$(this).customPopup(e);
+	});
+	
+	$('.share-result-btn').click(function(e) {
+		$(this).customPopup(e);
+	});
 	
 </script>
 </body>

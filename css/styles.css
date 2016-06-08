@@ -1189,13 +1189,41 @@ tr:nth-child(-n+4) .tooltip::after {
 	color: #fff;
 	text-align: center;
 	border-radius: 10px;
+	overflow: hidden;
 }
-
 
 .notification p{
 	font-size: 15px;
 }
 
+.notification.framed {
+	min-width: 500px;
+	min-height: 200px;
+}
+
+.notification .frame {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+.notification aside {
+	font-size: 12px;
+}
+
+.notification aside a {
+	color: #fff;
+	text-decoration: underline;
+	font-weight: bold;
+}
 
 /* Settings =============================================*/
 
@@ -1243,6 +1271,19 @@ tr:nth-child(-n+4) .tooltip::after {
 #settings-panel p{
 	margin-left: 20px;
 	margin-right: 20px;
+}
+
+.visit-website {
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+	color: #999;
+	background: rgba(244, 246, 246, 1);
+	box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.03);
+	margin: 0;
 }
 
 

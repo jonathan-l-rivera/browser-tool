@@ -10,11 +10,38 @@
 
 <body>
 	
-<div class="notification" id="questionable"   style="display: none;" >
-	<p>You are about to enter a website that is deemed questionable based on our records. Do you wish to continue?</p>
-			<button class="guide-btn guide-btn-main" onclick="closeNoti('questionable')">Yes, Proceed</button>
+<div class="notification framed" id="questionable">
+	<div class="frame" id="questionable-1">
+		<div class="inner-content">
+			<p>You are about to enter a website that is deemed questionable based on our records. Do you wish to continue?</p>
+			<button class="guide-btn guide-btn-main" onclick="goToFrame(this, '#questionable-2')">Yes, Proceed</button>
 			<button class="guide-btn guide-btn" onclick="closeNoti('questionable')">No, Take me back</button>
-
+		</div>
+	</div>
+	<div class="frame off-right" id="questionable-2">
+		<div class="inner-content">
+			<p>Skip this warning for 
+				<select name="warning">
+					<option>1 day</option>
+					<option>2 days</option>
+					<option>3 days</option>
+					<option>4 days</option>
+					<option>5 days</option>
+					<option>6 days</option>
+					<option>1 week</option>
+					<option>2 weeks</option>
+					<option>1 month</option>
+				</select>
+			</p>
+			<p>
+				<button class="guide-btn guide-btn-main" onclick="closeNoti('questionable')">Apply</button>
+				<button class="guide-btn guide-btn" onclick="closeNoti('questionable')">Don't skip</button>
+			</p>
+			<aside>
+				<a href="#">This is a safe site, send report.</a>
+			</aside>
+		</div>
+	</div>
 </div>
 
 <div class="browser-tool" id="bt-top">
@@ -38,6 +65,7 @@
 					<button class="share-icon share-icon-twitter" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=I just saw what my online profile looks like and how companies see me! &amp;hashtags=YourBrowserInsights">
 						<img src="img/icons/share-twitter.svg">
 					</button>
+					<p><a href="http://intercommedia.bulletsoul.com/browser-tool/" target="_blank">Visit our website</a></p>
 				</div>
 		</div>
 		<div class="notice" id="unique-key"  style="display: none;" >
@@ -75,12 +103,15 @@
 		</div>
 		
 		<div class="guide"  style="display: none;" >
+			<button class="notice-close-btn" onclick="closeGuide()"><i class="material-icons">close</i></button>
 			<div class="step step-1">
 				<img src="tool-img/logo.svg">
-				<p>Welcome, This short guide will help familiarize you with this great tool!</p>
-				<div class="guide-nav">
+				<p>Welcome, This short guide will help familiarize you with this great tool!
+				</p>
+				<div>
 					<button class="guide-btn" onclick="closeGuide()">Skip</button>
-					<button class="guide-btn guide-btn-main" onclick="nextGuide1()">Tour</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide1()">Tour</button><br/>
+					<p><a href="http://intercommedia.bulletsoul.com/browser-tool/" target="_blank">Visit our website</a></p>
 				</div>
 			</div>
 			
@@ -818,6 +849,8 @@
 			
 			<!-- Current Profile Sub Tab ================================-->
 			<div class="frame current-frame" >
+				
+				<h5 class="visit-website"><a href="http://intercommedia.bulletsoul.com/browser-tool/" target="_blank">Visit our website</a></h5>
 				<h5>History</h5>
 				<table id='tracker-table'>
 			        <tbody id="third-cookies">
@@ -868,6 +901,7 @@
 			          </tr>
 			        </tbody>
 				</table>
+				
 				<h5>Leave Us Feedback</h5>
 				<textarea placeholder="Type your message here"></textarea>
 				<button class="btn">Send Feedback</button>

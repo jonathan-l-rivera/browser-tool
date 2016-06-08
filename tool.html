@@ -109,8 +109,8 @@
 				<p>Welcome, This short guide will help familiarize you with this great tool!
 				</p>
 				<div>
-					<button class="guide-btn" onclick="closeGuide()">Skip</button>
-					<button class="guide-btn guide-btn-main" onclick="nextGuide1()">Tour</button><br/>
+					<button class="guide-btn" onclick="closeGuide()">no thanks</button>
+					<button class="guide-btn guide-btn-main" onclick="nextGuide1()">Take The Tour</button><br/>
 					<p><a href="http://intercommedia.bulletsoul.com/browser-tool/" target="_blank">Visit our website</a></p>
 				</div>
 			</div>
@@ -222,7 +222,9 @@
 					<!-- Age ================================-->
 					<div class="content age off-right frame">
 						<div class="inner-content">
+								<p class="chart-y-description">% accuracy</p>
 								<div class="age-chart" id="age-chart-1"></div>
+								<p class="chart-x-description">Perceived Age</p>
 								<div class="share-result">
 									<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I'm 25-35 years old. See what it knows about you! &amp;hashtags=YourBrowserInsights">
 										<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
@@ -258,7 +260,9 @@
 					<!-- Income ================================-->
 					<div class="content income off-right frame">
 						<div class="inner-content">
+								<p class="chart-y-description">% accuracy</p>
 								<div class="income-chart" id="income-chart-1"></div>
+								<p class="chart-x-description">Perceived Income</p>
 								<div class="share-result">
 									<button class="share-result-btn" data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows how much money I make. See what it knows about you! &amp;hashtags=YourBrowserInsights">
 										<span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
@@ -507,7 +511,7 @@
 				<span class="badge noti-number">1</span></li>
 				
                 <li class="js-go-to-frame" data-target="#flash-cookies">Advanced Options
-                    <span id="total-number-thirdparty" class="badge noti-number">1</span>
+                    <span id="total-number-thirdparty" class="badge badge-alert noti-number">657</span>
                 </li>
 			</ul>
 			
@@ -515,7 +519,7 @@
 			<div class="frame sub-tab-section current-frame has-bad" id="website-cookies">
 				<table class="filter-bar" id="filter-history">
 					<tr>
-						<td>Filter: </td>
+						<td>Show: </td>
 						<td class="filter-item" data-filter=".good" data-target="#site-cookies">
 							<span class="color-square green-square"></span>Good: <span class="number">342</span>
 						</td>
@@ -599,7 +603,7 @@
 			<div class="frame-2 frame sub-tab-section off-right " id="thirdparty-cookies">
 				<table class="filter-bar" id="filter-cookies">
 					<tr>
-						<td>Filter: </td>
+						<td>Show: </td>
 						<td class="filter-item" data-filter=".good" data-target="#third-cookies">
 							<span class="color-square green-square"></span>Good: <span class="number">342</span>
 						</td>
@@ -746,9 +750,9 @@
                 <div class="content frame history" style="top:0;">
 	                <div class="inner-content">
 		                <div class="advanced-options-message">
-	                		<p><strong>Flash cookies could track your web browsing long after you have left the site, because they are stored independent of your browser.</strong></p>
-							<p>We have detected <a href="#" onclick="goToFrame(this, '#flash-cookies-2');">657</a> flash cookies on your computer and we can instantly delete them for you at your request</p>
-							<a href="#" onclick="openNotice('unique-key');" class="clear-all-btn">Delete Flash Cookies</a>
+	                		<p><strong>Flash cookies can track your web browsing long after you have left a site, because they are stored independently of your browser.</strong></p>
+							<p class="alert-body">We have detected <a href="#" onclick="goToFrame(this, '#flash-cookies-2');"><strong>[657]</strong></a> flash cookies on your computer.</p><p>We can instantly delete them for you at your request.</p>
+							<a href="#" onclick="openNotice('unique-key');" class="alert-btn">Delete Flash Cookies</a>
 		                </div>
 	                </div>
                 </div>
@@ -1046,20 +1050,20 @@
 		  ]
 		};
 		var education_options = {
-		  width: 350,
-		  height: 230,
+		  width: 400,
+		  height: 250,
 		  seriesBarDistance: 10,
 		  reverseData: true,
 		  horizontalBars: true,
 		  axisY: {
-		    offset: 100,
+		    offset: 80,
 		    
 		  },
 		  axisX: {
 		    labelInterpolationFnc: function(value) {
 		      return value + '%'
 		    },
-		    scaleMinSpace: 23
+		    scaleMinSpace: 25
 		  }
 		};
 	
@@ -1078,7 +1082,7 @@
 	
 		var gender_options = {
 		  width: 400,
-		  height: 200,
+		  height: 250,
 		  donut: true,
 		  donutWidth: 10,
 		  labelOffset: 20,
@@ -1097,7 +1101,7 @@
 			},
 			children_options = {
 			  width: 400,
-			  height: 200,
+			  height: 250,
 			  donut: true,
 			  donutWidth: 10,
 			  labelOffset: 20,
@@ -1120,8 +1124,8 @@
 			  ]
 			}, 
 			age_options = {
-				width: 350,
-				height: 200,
+				width: 400,
+				height: 250,
 				low: 0,
 				showArea: true,
 				axisY: {
@@ -1148,8 +1152,8 @@
 			  ]
 			}, 
 			income_options ={
-				width: 350,
-				height: 200,
+				width: 400,
+				height: 250,
 				low: 0,
 				showArea: true,
 				axisY: {
@@ -1184,7 +1188,7 @@
 		$('.browser-tool').addClass('guide-2');
 		$('.step').hide();
 		$('.step-2').fadeIn('fast');
-		$('.guide').css('background-color', 'rgba(0, 0, 0, 0.65)');
+		$('.guide').css('background-color', 'rgba(0, 0, 0, 0.75)');
 	}
 	
 	function nextGuide2(slide){

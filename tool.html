@@ -15,7 +15,7 @@
 		<div class="inner-content">
 			<p>You are about to enter a website that is deemed questionable based on our records. Do you wish to continue?</p>
 			<button class="guide-btn guide-btn-main" onclick="goToFrame(this, '#questionable-2')">Yes, Proceed</button>
-			<button class="guide-btn guide-btn" onclick="closeNoti('questionable')">No, Take me back</button>
+			<button class="guide-btn guide-btn" onclick="closeNotice('questionable')">No, Take me back</button>
 		</div>
 	</div>
 	<div class="frame off-right" id="questionable-2">
@@ -34,8 +34,8 @@
 				</select>
 			</p>
 			<p>
-				<button class="guide-btn guide-btn-main" onclick="closeNoti('questionable')">Apply</button>
-				<button class="guide-btn guide-btn" onclick="closeNoti('questionable')">Don't skip</button>
+				<button class="guide-btn guide-btn-main" onclick="closeNotice('questionable')">Apply</button>
+				<button class="guide-btn guide-btn" onclick="closeNotice('questionable')">Don't skip</button>
 			</p>
 			<aside>
 				<a href="#">This is a safe site, send report.</a>
@@ -916,8 +916,9 @@
 		<ul class="bottom-tab-bar">
 			<li class="js-go-to-frame is-active" data-target="#profile-panel"><i class="material-icons">person_outline</i> Your Profile</li>
 			<li class="js-go-to-frame" data-target="#cookies-panel"><i class="material-icons">web</i> Your Activity
-                <span class="badge noti-number-tot">1</span></li>
-                <li class="small" onclick="openNotice('share')"><i class="material-icons">share</i></li>
+                <span class="badge noti-number-tot">1</span>
+            </li>
+            <li class="small" onclick="openNotice('share')"><i class="material-icons">share</i></li>
 			<li class="small" onclick="openGuide()"><i class="material-icons">help_outline</i></li>
 			<li class="js-go-to-frame small" data-target="#settings-panel"><i class="material-icons">settings</i></li>
 		</ul>
@@ -1245,10 +1246,6 @@
 		$('[data-target="#profile-panel"], [data-target="#current-profile"], [data-target="#website-cookies"]').click();
 	}
 	
-	function closeNoti(id){
-		$('#' + id).fadeOut('fast');
-	}
-	
 	function closeNotice(id){
 		$('#' + id).fadeOut('fast');
 	}
@@ -1296,6 +1293,7 @@
 		console.log(element);
 		$(element).parents('tr').remove();
 	}
+	
 	/**
 	* jQuery function to prevent default anchor event and take the href * and the title to make a share pupup
 	*
@@ -1310,9 +1308,9 @@
 		e.preventDefault();
 		
 		// Set values for window
-		intWidth = intWidth || '500';
-		intHeight = intHeight || '400';
-		strResize = (blnResize ? 'yes' : 'no');
+		var intWidth = intWidth || '500';
+		var intHeight = intHeight || '400';
+		var strResize = (blnResize ? 'yes' : 'no');
 		
 		// Set title and open popup with focus on it
 		var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),

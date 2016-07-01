@@ -3,8 +3,6 @@
 <html>
 <head>
     <title>Title of the document</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
 
@@ -123,8 +121,12 @@
 	
 	                <div class="form-long-row">
 	                    <div class="form-long-field" id="cc-type-fields">
-	                        <div id="cc-types">
-	                            <input type="radio" name="Customer[credit_card_type_id]" value="1e80c27f-26c9-416c-a66d-d6ac14cd624f" class="with-gap" id="mastercard"><img src="img/mastercard-bw.png"> <label for="mastercard">MasterCard</label> <input type="radio" name="Customer[credit_card_type_id]" value="a4713abc-b991-44ff-b85c-0c53be73bc0a" class="with-gap" id="visa"><label for="visa"><img src="img/visa-bw.png" class="selected" alt=""> Visa</label>
+	                        <div id="cc-types" class="cc-types">
+	                            <input type="radio" name="Customer[credit_card_type_id]" value="1e80c27f-26c9-416c-a66d-d6ac14cd624f" class="cc-radio" id="mastercard">
+	                            <label for="mastercard"><img src="img/mastercard-bw.png"> MasterCard</label> 
+	                            
+	                            <input type="radio" name="Customer[credit_card_type_id]" value="a4713abc-b991-44ff-b85c-0c53be73bc0a"class="cc-radio" id="visa">
+	                            <label for="visa"><img src="img/visa-bw.png" class="selected" alt=""> Visa</label>
 	                        </div>
 	                    </div>
 	

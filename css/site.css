@@ -508,8 +508,7 @@ input::-moz-focus-inner {
   width: 40px;
   height: 3px;
   background: #fe504f;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 .field {
   border: 1px solid #ccc;
@@ -3255,6 +3254,60 @@ img {
 
 .form-long-title {
   margin-bottom: 0; }
+
+.cc-types {
+	margin-top: 20px;
+}
+
+.cc-radio{
+	display: none;
+	vertical-align: middle;
+}
+
+.cc-radio + label {
+	line-height: 30px;
+	display: inline-block;
+	margin-right: 10px;
+	cursor: pointer;
+	border: 2px solid #efefef;
+	border-radius: 10px;
+	padding: 5px 15px 5px 5px;
+	transition: all 0.3s ease;
+}
+
+.cc-radio:checked + label {
+	border: 2px solid #efefef;
+	background: #f7f7f7;
+}
+
+.cc-radio + label img {
+	display: inline-block;
+	vertical-align: middle;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+.cc-radio:checked + label img{
+	opacity: 1;
+}
+
+.cc-radio + label:before {
+	content: ' ';
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	border: 2px solid #ddd;
+	transition: all 0.3s ease;
+	border-radius: 100%;
+	margin-right: 10px;
+}
+
+.cc-radio:checked + label:before {
+	content: ' ';
+	border-color: #fe504f;
+	background: #fe504f;
+}
+
 
 .error-message {
 	margin: 0;

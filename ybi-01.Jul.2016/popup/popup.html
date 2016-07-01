@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Title of the document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/chartist.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+<div class="browser-tool" id="bt-top">
+    <div class="browser-tool-content">
+        <div class="notice" id="share" style="display: none;">
+            <button class="notice-close-btn js-close-notice" data-close="share"><i class="material-icons">close</i>
+            </button>
+            <img src="img/logo.svg">
+            <p><strong>You took control of your browsing history,<br/>now help your friends do the same!</strong></p>
+            <div id="key-notices">
+                <button class="share-icon share-icon-google"
+                        data-url="https://plus.google.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd">
+                    <img src="img/icons/share-google-plus.svg">
+                </button>
+                <button class="share-icon share-icon-facebook"
+                        data-url="https://www.facebook.com/dialog/share?app_id=650988901719679&display=popup&href=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd">
+                    <img src="img/icons/share-facebook.svg">
+                </button>
+                <button class="share-icon share-icon-twitter"
+                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=I just saw what my online profile looks like and how companies see me! &amp;hashtags=YourBrowserInsights">
+                    <img src="img/icons/share-twitter.svg">
+                </button>
+                <p><a href="http://intercommedia.bulletsoul.com/browser-tool/" target="_blank">Visit our website</a></p>
+            </div>
+        </div>
+        .021
+
+        <!-- =================================================
+
+            Error Message
+
+        ====================================================-->
+        <div class="notice" id="error" style="display: none">
+            <div class="step">
+                <p>It looks like something has gone wrong. We apologize for the inconvenience. Please restart the
+                    extension. You can also send us a report to help us identify and fix the issue.</p>
+
+                <div class="notice-nav">
+                    <button id="send-error-report" class="notice-btn">Send Report</button>
+                    <button id="reload-popup" class="notice-btn guide-btn-main">Reload</button>
+                </div>
+            </div>
+        </div>
+        <!-- =================================================
+
+            Guide
+
+        ====================================================-->
+
+        <div class="guide" style="display: none">
+            <div class="step step-1">
+                <img src="img/logo.svg">
+
+                <p>Welcome, This short guide will help familiarize you with this great tool!</p>
+                <button class="guide-btn guide-btn-skip">Skip</button>
+                <button class="guide-btn guide-btn-main guide-btn-next" data-page="1">Tour</button>
+            </div>
+
+            <div class="step step-2" style="display: none;">
+                <p><strong>Your Profile</strong> section provides you insights into how you are viewed by third parties
+                    based upon your browsing history.</p>
+
+                <div class="guide-nav">
+                    <button class="guide-btn guide-btn-skip">Done</button>
+                    <button class="guide-btn guide-btn-main guide-btn-next" data-page="2">Next</button>
+                </div>
+                <div class="guid-arrow bounce" id="guide-profile-tab">
+                    <i class="material-icons">arrow_downward</i>
+                </div>
+            </div>
+
+            <div class="step step-3" style="display: none;">
+                <p>It is further broken down into two pieces: Your <strong>Current Profile</strong> tells you how you
+                    are perceived now and is based on your most recent activity.</p>
+
+                <div class="guide-nav">
+                    <button class="guide-btn guide-btn-skip">Done</button>
+                    <button class="guide-btn guide-btn-main guide-btn-next" data-page="3">Next</button>
+                </div>
+                <div class="guid-arrow bounce-up" id="guide-current-profile">
+                    <i class="material-icons">arrow_upward</i>
+                </div>
+                `.
+            </div>
+
+            <div class="step step-4" style="display: none;">
+                <p>Your <strong>Long Term Profile</strong> takes into account a deeper view of your browsing.</p>
+
+                <div class="guide-nav">
+                    <button class="guide-btn guide-btn-skip">Done</button>
+                    <button class="guide-btn guide-btn-main guide-btn-next" data-page="4">Next</button>
+                </div>
+                <div class="guid-arrow bounce-up" id="guide-long-term-profile">
+                    <i class="material-icons">arrow_upward</i>
+                </div>
+            </div>
+
+            <div class="step step-5" style="display: none;">
+                <p>The <strong>Cookies</strong> section is a compilation of the records of the web sites that you have
+                    visited as well as the third party trackers that exist in your browser or on your hard drive. </p>
+
+                <div class="guide-nav">
+                    <button class="guide-btn guide-btn-skip">Done</button>
+                    <button class="guide-btn guide-btn-main guide-btn-next" data-page="5">Next</button>
+                </div>
+                <div class="guid-arrow bounce" id="guide-cookies-tab">
+                    <i class="material-icons">arrow_downward</i>
+                </div>
+            </div>
+
+            <div class="step step-6" style="display: none;">
+                <p>The presence of web site cookies reflects your activity and by extension your likely demographic and
+                    interest categories. It paints a portrait of your profile. Cookies describe the third parties that
+                    can see part or all of that profile.</p>
+
+                <div class="guide-nav">
+                    <button class="guide-btn guide-btn-skip">Done</button>
+                    <button class="guide-btn guide-btn-main guide-btn-next" data-page="6">Next</button>
+                </div>
+                <div class="guid-arrow bounce-up" id="guide-visited">
+                    <i class="material-icons">arrow_upward</i>
+                </div>
+            </div>
+
+            <div class="step step-7" style="display: none;">
+                <p>Third party <strong>trackers</strong> exist in your browser or on your hard drive. Here, you can
+                    block trackers to keep your browser history information private.</p>
+
+                <div class="guide-nav">
+                    <button class="guide-btn guide-btn-skip">Done</button>
+                    <button class="guide-btn guide-btn-main guide-btn-next" data-page="7">Next</button>
+                </div>
+                <div class="guid-arrow bounce-up" id="guide-trackers">
+                    <i class="material-icons">arrow_upward</i>
+                </div>
+            </div>
+
+            <div class="step step-8" style="display: none;">
+                <p>To help us to identity trackers you can tick on the box below which will send us details of the
+                    trackers on your device. This is completely anonymous and none of your personal details will be sent
+                    to us. </p>
+
+                <p>
+                    <label for="report-detected-trackers-guide">
+                        <input id='report-detected-trackers-guide' class="report-trackers" type="checkbox">
+                        Send anonymous reports
+                    </label>
+                </p>
+
+                <div class="guide-nav">
+                    <button class="guide-btn guide-btn-main guide-btn-skip">Done</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================================================
+
+            Profile Tab
+
+        ====================================================-->
+        <div class="frame current-frame" id="profile-panel">
+            <ul class="tab-bar">
+                <li class="js-go-to-frame is-active" data-target="#current-profile">Current Profile</li>
+                <li class="js-go-to-frame" data-target="#long-term-profile">Long Term Profile</li>
+            </ul>
+
+            <!-- Current Profile Sub Tab ================================-->
+            <div class="frame current-frame" id="current-profile">
+                <div class="sub-tab-section">
+                    <ul class="sub-tab-bar">
+                        <li class="js-go-to-frame is-active" data-target=".gender">Gender</li>
+                        <li class="js-go-to-frame" data-target=".age">Age</li>
+                        <li class="js-go-to-frame" data-target=".children">Children</li>
+                        <li class="js-go-to-frame" data-target=".education">Education</li>
+                        <li class="js-go-to-frame" data-target=".income">Income</li>
+                        <li class="js-go-to-frame" data-target=".interests">Interests</li>
+                    </ul>
+
+                    <!-- Gender ================================-->
+                    <div class="content gender frame">
+                        <div class="inner-content">
+                            <div class="gender-chart" id="gender-chart-1"></div>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I'm a [GENDER] See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age ================================-->
+                    <div class="content age off-right frame">
+                        <div class="inner-content">
+                            <p class="chart-y-description">% accuracy</p>
+                            <div class="age-chart" id="age-chart-1"></div>
+                            <p class="chart-x-description">Perceived Age</p>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I'm [AGE_RANGE] years old. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Children ================================-->
+                    <div class="content children off-right frame">
+                        <div class="inner-content">
+                            <div class="children-chart" id="children-chart-1"></div>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I [DO/DON'T] have kids! See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education ================================-->
+                    <div class="content education off-right frame">
+                        <div class="inner-content">
+                            <div class="education-chart" id="education-chart-1"></div>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my education level is [EDUCATION_LEVEL]. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Income ================================-->
+                    <div class="content income off-right frame">
+                        <div class="inner-content">
+                            <p class="chart-y-description">% accuracy</p>
+                            <div class="income-chart" id="income-chart-1"></div>
+                            <p class="chart-x-description">Perceived Income</p>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my income is between [INCOME]. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interests ================================-->
+                    <div id="interests-chart-1" class="content interests off-right frame">
+                        <div class="share-result">
+                            <button class="share-result-btn"
+                                    data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my interests. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="empty-profile" style="display: none">
+                    <div class="empty-profile-message">
+                        <p>We apologize, but we don't have enough data to create your profile. It usually takes about a
+                            week's worth of browsing to create an account.</p>
+
+                        <p>Please use your browser on a regular basis and come back in a week.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Long Term Profile Sub Tab ================================-->
+            <div class="frame off-right" id="long-term-profile">
+                <div class="sub-tab-section">
+                    <ul class="sub-tab-bar">
+                        <li class="js-go-to-frame is-active" data-target=".gender2">Gender</li>
+                        <li class="js-go-to-frame" data-target=".age2">Age</li>
+                        <li class="js-go-to-frame" data-target=".children2">Children</li>
+                        <li class="js-go-to-frame" data-target=".education2">Education</li>
+                        <li class="js-go-to-frame" data-target=".income2">Income</li>
+                        <li class="js-go-to-frame" data-target=".interests2">Interests</li>
+                    </ul>
+
+                    <!-- Gender ================================-->
+                    <div class="content gender2 frame">
+                        <div class="inner-content">
+                            <div class="gender-chart" id="gender-chart-2"></div>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I'm a [GENDER] See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age ================================-->
+                    <div class="content age2 off-right frame">
+                        <div class="inner-content">
+                            <p class="chart-y-description">% accuracy</p>
+                            <div class="age-chart" id="age-chart-2"></div>
+                            <p class="chart-x-description">Perceived Age</p>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I'm [AGE_RANGE] years old. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Children ================================-->
+                    <div class="content children2 off-right frame">
+                        <div class="inner-content">
+                            <div class="children-chart" id="children-chart-2"></div>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows I [DO/DON'T] have kids! See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education ================================-->
+                    <div class="content education2 off-right frame">
+                        <div class="inner-content">
+                            <div class="education-chart" id="education-chart-2"></div>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my education level is [EDUCATION_LEVEL]. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Income ================================-->
+                    <div class="content income2 off-right frame">
+                        <div class="inner-content">
+                            <p class="chart-y-description">% accuracy</p>
+                            <div class="income-chart" id="income-chart-2"></div>
+                            <p class="chart-x-description">Perceived Income</p>
+                            <div class="share-result">
+                                <button class="share-result-btn"
+                                        data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my income is between [INCOME]. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                    <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interests ================================-->
+                    <div id="interests-chart-2" class="content interests2 off-right frame">
+                        <div class="share-result">
+                            <button class="share-result-btn"
+                                    data-url="http://twitter.com/share?url=https://chrome.google.com/webstore/detail/browser-tool/eaakgkoaoknmjiamhfgoiabcjikjcgbd;text=The web knows my interests. See what it knows about you! &amp;hashtags=YourBrowserInsights">
+                                <span><img src="img/icons/share-twitter-color.svg"> Tweet My Result</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="empty-profile" style="display: none">
+                    <div class="empty-profile-message">
+                        <p>We apologize, but we don't have enough data to create your profile. It usually takes about a
+                            week's worth of browsing to create an account.</p>
+
+                        <p>Please use your browser on a regular basis and come back in a week.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================================================
+
+            Cookies Tab
+
+        ====================================================-->
+
+        <div class="frame off-right" id="cookies-panel">
+
+            <!-- Tabs ================================-->
+            <ul class="tab-bar">
+                <li class="is-active js-go-to-frame" data-target="#website-cookies">Visited Websites <span
+                        class="tooltip description">Used for the basic performance of the web site. This also confirms you were there</span>
+                    <span id="total-number-site" class="badge noti-number">1</span></li>
+                </li>
+                <li class="js-go-to-frame" data-target="#thirdparty-cookies">Trackers
+                    <span id="total-number-thirdparty" class="badge noti-number">1</span>
+                </li>
+                <li class="js-go-to-frame" data-target="#flash-cookies">Advanced Options
+                    <span id="total-number-flash" class="badge badge-alert noti-number">1</span>
+                </li>
+            </ul>
+
+            <!-- Website Cookies ================================-->
+            <div class="frame sub-tab-section current-frame" id="website-cookies">
+                <table class="filter-bar" id="filter-history">
+                    <tr>
+                        <td>Filter:</td>
+                        <td class="filter-item" data-filter=".good" data-target="#site-cookies">
+                            <span class="color-square green-square"></span>Good: <span id="good-sites"
+                                                                                       class="number">?</span>
+                        </td>
+                        <td class="filter-item" data-filter=".neutral" data-target="#site-cookies">
+                            <span class="color-square neutral-square"></span>Neutral: <span id="neutral-sites"
+                                                                                            class="number">?</span></td>
+                        <td class="filter-item" data-filter=".bad" data-target="#site-cookies">
+                            <span class="color-square red-square"></span>Bad: <span id="bad-sites"
+                                                                                    class="number">?</span></td>
+                    </tr>
+                </table>
+                <div class="clear-all-btn-container">
+                    <a href="#" class="clear-all-btn" id="clear-bad-history">Clear All Bad History</a>
+                </div>
+
+                <!-- Gender ================================-->
+
+                <div class="content frame history">
+                    <table class="sortable" id="history-table">
+                        <thead>
+                        <tr>
+                            <th>Site</th>
+                            <th class="sorttable_numeric">Date Visited</th>
+                            <th style="text-align:right;" class="sorttable_numeric">Time Spent</th>
+                        </tr>
+                        </thead>
+                        <tbody id="site-cookies">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Third Party Cookies ================================-->
+            <div class="frame-2 frame sub-tab-section off-right" id="thirdparty-cookies">
+                <table class="filter-bar" id="filter-cookies">
+                    <tr>
+                        <!--Filter:-->
+                        <td></td>
+                        <td class="filter-item" data-filter=".safe" data-target="#third-cookies">
+                            <span class="color-square green-square"></span>Safe: <span id="safe-trackers"
+                                                                                       class="number">?</span>
+                        </td>
+                        <td class="filter-item" data-filter=".personal" data-target="#third-cookies">
+                            <span class="color-square orange-square"></span>Personal: <span id="personal-trackers"
+                                                                                            class="number">?</span>
+                        </td>
+                        <td class="filter-item" data-filter=".malicious" data-target="#third-cookies">
+                            <span class="color-square red-square"></span>Malicious: <span id="malicious-trackers"
+                                                                                          class="number">?</span>
+                        </td>
+                        <td class="filter-item" data-filter=".unknown" data-target="#third-cookies">
+                            <span class="color-square neutral-square"></span>Unknown: <span id="unknown-trackers"
+                                                                                            class="number">?</span>
+                        </td>
+                    </tr>
+                </table>
+                <!-- Gender ================================-->
+                <div class="content frame history">
+                    <table class="sortable" id='trackers-table'>
+                        <thead>
+                        <tr>
+                            <th>Site</th>
+                            <th>Type</th>
+                            <th>Date Visited</th>
+                            <th style="text-align:left;" class="sorttable_nosort">Block</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="third-cookies"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="frame-3 frame sub-tab-section off-right" id="flash-cookies">
+                <!-- Items ================================-->
+                <div class="content frame history" style="top:0;">
+                    <div class="inner-content">
+                        <div class="advanced-options-message">
+                            <div id="app-not-installed" style="display: none">
+                                <p><strong>Flash cookies can track your web browsing long after you have left a site, because they are stored independently of your browser.</strong></p>
+
+										  <p>Your browser includes only a portion of the trackers that evaluate your profile. Our Advanced Options capability finds the non-cookie based trackers that exist on your hard drive. For $2.99, you can see and delete them now.</p>
+                            </div>
+                            
+                            <a id="download-application" href="#" class="js-open-notice alert-btn" data-open="unique-key">Delete Flash Cookies</a>
+                            
+                            <!--<p><strong>Flash cookies can track your web browsing long after you have left a site,-->
+                            <!--because they are stored independently of your browser.</strong></p>-->
+                            <!--<p class="alert-body">We have detected <a href="#" class="js-go-to-frame"-->
+                            <!--data-target="#flash-cookies-2"><strong>[657]</strong></a>-->
+                            <!--flash cookies on your computer.</p>-->
+                            <!--<p>We can instantly delete them for you at your request.</p>-->
+                            <!--<a href="#" class="js-open-notice alert-btn" data-open="unique-key">Delete Flash Cookies</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="frame-4 frame sub-tab-section off-right has-bad" id="flash-cookies-2">
+                <div class="clear-all-btn-container">
+                    <a href="#" class="js-clear-all" data-remove="all">Remove All Flash Cookies</a>
+                </div>
+                <div class="content frame history fixed-thead" style="top:0;">
+                    <table class="sortable" id='tracker-table'>
+                        <thead>
+                        <tr>
+                            <th>Site</th>
+                            <th>Date Placed</th>
+                            <th style="text-align:center;" class="sorttable_nosort">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody id="third-cookies">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="frame off-right" id="settings-panel">
+            <h4 class="section-title">Settings</h4>
+
+            <!-- Current Profile Sub Tab ================================-->
+            <div class="frame current-frame">
+                <h5>History</h5>
+                <table id='settings-history-table'>
+                    <tbody>
+                    <tr class="bad">
+                        <td width="60%">Clear Bad History</td>
+                        <td>
+                            <span id="settings-history-badge" class="badge">?</span>
+                        </td>
+                        <td class="on-off" sorttable_customkey="0">
+                            <a href="#" class="clear-all-btn" id="clear-all-bad">Clear All</a>
+                        </td>
+                    </tr>
+                </table>
+
+                <h5>Trackers</h5>
+                <table id='tracker-table'>
+                    <tbody>
+                    <tr class="safe">
+                        <td width="60%">Block Safe</td>
+                        <td><span class="badge">?</span></td>
+                        <td class="on-off" sorttable_customkey="0">
+                            <input type="checkbox" id="block-safe-trackers" class="block-trackers" data-type="safe">
+                            <label for="block-safe-trackers">
+                                <i class="material-icons"></i>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr class="personal">
+                        <td width="60%">Block Personal</td>
+                        <td><span class="badge">?</span>
+                        </td>
+                        <td class="on-off" sorttable_customkey="0">
+                            <input type="checkbox" id="block-personal-trackers" class="block-trackers"
+                                   data-type="personal">
+                            <label for="block-personal-trackers">
+                                <i class="material-icons"></i>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr class="malicious">
+                        <td width="60%">Block Malicious</td>
+                        <td><span class="badge">?</span></td>
+                        <td class="on-off" sorttable_customkey="0">
+                            <input type="checkbox" id="block-malicious-trackers" class="block-trackers"
+                                   data-type="malicious">
+                            <label for="block-malicious-trackers">
+                                <i class="material-icons"></i>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr class="unknown">
+                        <td width="60%">Block Unknown</td>
+                        <td><span class="badge">?</span></td>
+                        <td class="on-off" sorttable_customkey="0">
+                            <input type="checkbox" id="block-unknown-trackers" class="block-trackers"
+                                   data-type="unknown">
+                            <label for="block-unknown-trackers">
+                                <i class="material-icons"></i>
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h5>Reporting</h5>
+                <label for="report-detected-trackers-settings">
+                    <input id='report-detected-trackers-settings' class="report-trackers" type="checkbox"> Send
+                    anonymous reports
+                </label>
+
+                <h5>Leave Us Feedback</h5>
+                <select id="feedback-type">
+                    <option value="" disabled selected>Issue Type</option>
+                    <option value="1">Bug</option>
+                    <option value="2">Improvement</option>
+                    <option value="3">New Feature</option>
+                </select>
+                <textarea id="feedback-msg" placeholder="Type your message here" maxlength="1000"></textarea>
+                <button id="btn-send-feedback" class="btn">Send Feedback</button>
+            </div>
+        </div>
+
+        <!-- Main Tabs ================================-->
+        <ul class="bottom-tab-bar">
+            <li class="js-go-to-frame is-active" data-target="#profile-panel"><i
+                    class="material-icons">person_outline</i> Your Profile
+            </li>
+            <li class="js-go-to-frame" data-target="#cookies-panel"><i class="material-icons">web</i> Your Activity
+                <span class="badge noti-number-tot">1</span></li>
+
+            <li class="small js-open-notice" data-open="share"><i class="material-icons">share</i></li>
+
+            <li id="btn-open-guide" class="small"><i class="material-icons">help_outline</i></li>
+            <li class="js-go-to-frame small" data-target="#settings-panel"><i class="material-icons">settings</i></li>
+        </ul>
+    </div>
+</div>
+<div id="modal-popup" class="outer-popup-container" style="display: none">
+    <div class="inner-popup-container">
+        <div class="modal-content">
+
+        </div>
+        <div>
+            <hr>
+        </div>
+        <button id="hide-modal" class="btn">Close</button>
+    </div>
+</div>
+
+<script src="js/vendor/sorttable.js"></script>
+<script type="text/javascript" src="../js/lib/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/lib/moment.min.js"></script>
+<script type="text/javascript" src="../js/lib/moment-duration-format.js"></script>
+
+<script src="js/vendor/jquery-ui.min.js"></script>
+<script src="js/vendor/chartist.min.js"></script>
+<script src="js/vendor/materialize.min.js"></script>
+
+<script src="js/charts.js"></script>
+
+<script type="text/javascript" src="../js/lib/traceur.js"></script>
+<script type="text/javascript" src="../js/lib/bootstrap.js"></script>
+<script type="module" src="js/popup.js"></script>
+
+</body>
+</html>
